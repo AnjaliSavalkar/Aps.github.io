@@ -137,29 +137,134 @@ nav .right a:hover {
   border-radius: 10px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
+/* Enhanced Academic Details Section */
+.academic-details-section {
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+}
 
-/* Academic Details Section */
+.academic-details-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0066cc, #4dabf7);
+}
+
+.academic-details-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #0066cc;
+  position: relative;
+  display: inline-block;
+}
+
+.academic-details-section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #0066cc, transparent);
+}
+
+/* Create a modern two-column layout for the definition list */
 .academic-details-section dl {
   display: grid;
   grid-template-columns: 1fr 2fr;
-  gap: 12px;
+  gap: 16px;
   margin-bottom: 30px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
 }
 
 .academic-details-section dt {
   font-weight: 600;
-  color: #444;
+  color: #333;
+  position: relative;
+  padding-left: 18px;
+  display: flex;
+  align-items: center;
+}
+
+.academic-details-section dt::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: #0066cc;
+  border-radius: 50%;
 }
 
 .academic-details-section dd {
   color: #555;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed #eee;
+}
+
+.academic-details-section dd:last-of-type {
+  border-bottom: none;
+}
+
+/* Style for the portfolio topic specifically */
+.academic-details-section dt:last-of-type + dd {
+  font-weight: 500;
+  color: #0066cc;
 }
 
 .academic-details-section p {
   color: #555;
-  line-height: 1.7;
+  line-height: 1.8;
+  font-size: 1.05rem;
+  margin-top: 20px;
+  padding: 20px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+  border-left: 3px solid #0066cc;
 }
 
+/* Animated gradient border on hover */
+.academic-details-section:hover::before {
+  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+  .academic-details-section {
+    padding: 30px 20px;
+  }
+  
+  .academic-details-section dl {
+    grid-template-columns: 1fr;
+  }
+  
+  .academic-details-section dt {
+    margin-top: 15px;
+  }
+  
+  .academic-details-section dd {
+    padding-left: 18px;
+  }
+}
 /* Skills Section */
 .skills-section .text {
   margin-bottom: 30px;
