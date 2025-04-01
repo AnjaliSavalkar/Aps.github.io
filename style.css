@@ -1,379 +1,330 @@
-:root {
-  --text-color: #1a1c20;
-  --link-color: #4a76ee;
-  --background-color: #eeeff1;
-}
-
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  background-color: var(--background-color);
-  max-width: 1400px;
+  line-height: 1.6;
+  color: #333;
+  max-width: 1200px;
   margin: 0 auto;
+  padding: 0 20px;
 }
 
 a {
-  color: var(--link-color);
   text-decoration: none;
+  color: #0066cc;
+  transition: color 0.3s;
 }
 
-/* NAVBAR */
+a:hover {
+  color: #004080;
+}
+
+section {
+  padding: 60px 0;
+  border-bottom: 1px solid #eee;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+  color: #222;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 60px;
+  height: 3px;
+  background-color: #0066cc;
+}
+
+/* Navbar */
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  padding: 0 50px;
-  height: 80px;
+  padding: 20px 0;
+  border-bottom: 1px solid #eee;
 }
 
 nav .left a {
-  color: var(--text-color);
-  font-size: 22px;
+  font-size: 1.5rem;
   font-weight: 600;
+  color: #222;
+}
+
+nav .right {
+  display: flex;
+  gap: 20px;
 }
 
 nav .right a {
-  color: var(--text-color);
-  margin: 0 10px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #555;
 }
 
-nav .right a:last-child {
-  color: var(--background-color);
-  background-color: var(--text-color);
-  padding: 5px 15px;
-  border-radius: 5px;
+nav .right a:hover {
+  color: #0066cc;
 }
 
-nav .right a span {
-  margin-left: 5px;
-}
-
-/* SECTION 1: Hero */
+/* Hero Section */
 .hero-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 50px;
-  margin: 50px 0;
-  margin-bottom: 100px;
   gap: 40px;
 }
 
 .hero-section .text {
-  flex: 5;
+  flex: 1;
 }
 
-.hero-section .text h2 {
-  font-size: 45px;
+.hero-section h2 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
 }
 
-.hero-section .text .links {
-  margin-top: 25px;
+.hero-section h2::after {
+  display: none;
 }
 
-.hero-section .text .links a {
-  display: inline-block;
-  padding: 5px 10px;
-  border: 2px solid var(--link-color);
+.hero-section p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  color: #555;
+}
+
+.hero-section .links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.hero-section .links a {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: #f5f5f5;
   border-radius: 5px;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  transition: .1s;
+  color: #333;
+  transition: all 0.3s;
 }
 
-.hero-section .text .links a:hover {
-  color: var(--text-color);
-  border: 2px solid var(--text-color);
+.hero-section .links a:hover {
+  background-color: #0066cc;
+  color: white;
 }
 
 .hero-section .headshot {
-  flex: 2;
-  display: flex;
-  justify-content: right;
+  flex: 1;
+  max-width: 350px;
 }
 
 .hero-section .headshot img {
-  width: 350px;
-  border-radius: 50%;
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-/* SECTION 2: Skills */
-.skills-section {
-  padding: 0 50px;
-  margin-bottom: 100px;
+/* Academic Details Section */
+.academic-details-section dl {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 12px;
+  margin-bottom: 30px;
 }
 
-.skills-section h2 {
-  text-align: center;
-  font-size: 35px;
+.academic-details-section dt {
+  font-weight: 600;
+  color: #444;
 }
 
+.academic-details-section dd {
+  color: #555;
+}
+
+.academic-details-section p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* Skills Section */
 .skills-section .text {
-  text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  color: #555;
 }
 
 .skills-section .cells {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
+  gap: 20px;
 }
 
-.skills-section .cells .cell {
+.skills-section .cell {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-
-  width: 200px;
-  padding: 10px 20px;
-  margin: 10px;
-  border: 1.5px solid #d3d3d3;
-  border-radius: 5px;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  width: 120px;
+  transition: transform 0.3s;
 }
 
-.skills-section .cells .cell img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  border-radius: 2px;
+.skills-section .cell:hover {
+  transform: translateY(-5px);
 }
 
-.skills-section .cells .cell span {
-  font-size: 18px;
-}
-
-/* SECTION 3: Testimony */
-.testimony-section {
-  padding: 0 50px;
-  margin-bottom: 100px;
-}
-
-.testimony-section h2 {
-  font-size: 35px;
-  margin-bottom: 30px;
-}
-
-.testimony-section .group {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-}
-
-.testimony-section .group .person-details {
-  text-align: center;
-  flex: 2;
-}
-
-.testimony-section .group .person-details img {
-  width: 200px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 50%;
+.skills-section .cell img {
+  width: 50px;
+  height: 50px;
   margin-bottom: 10px;
 }
 
-.testimony-section .group .person-details p {
+.skills-section .cell span {
   font-weight: 600;
 }
 
-.testimony-section .group .person-details p:last-child {
-  font-weight: normal;
+/* Projects Section */
+.testimony-section .group {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
 }
 
-.testimony-section .group .text {
-  flex: 8;
+.testimony-section .person-details {
+  flex: 1;
+  text-align: center;
 }
 
-/* SECTION 4: Contact */
-.contact-section {
-  padding: 0 50px;
-  margin-bottom: 100px;
+.testimony-section .person-details img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.contact-section h2 {
-  font-size: 35px;
+.testimony-section .person-details p:first-of-type {
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 10px;
 }
 
+.testimony-section .text {
+  flex: 2;
+  font-style: italic;
+  color: #555;
+  position: relative;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.testimony-section .text::before {
+  content: '❝';
+  font-size: 3rem;
+  color: #ddd;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+/* Contact Section */
 .contact-section .group {
   display: flex;
-  gap: 50px;
+  gap: 40px;
 }
 
-.contact-section .group .text {
-  flex: 3;
-  margin-top: 20px;
+.contact-section .text {
+  flex: 1;
+  color: #555;
 }
 
-.contact-section .group form {
-  flex: 3;
+.contact-section form {
+  flex: 1;
   display: flex;
   flex-direction: column;
 }
 
-.contact-section .group form input,
-.contact-section .group form textarea {
-  font-family: 'Poppins', sans-serif;
-  border: 2px solid var(--link-color);
-  background-color: transparent;
+.contact-section label {
+  margin-bottom: 5px;
+  font-weight: 600;
+  color: #444;
+}
+
+.contact-section input,
+.contact-section textarea {
+  margin-bottom: 20px;
   padding: 10px;
-  margin-bottom: 15px;
-  outline: none;
-  resize: none;
-}
-
-.contact-section .group form button {
-  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
   font-family: 'Poppins', sans-serif;
-  color: #fff;
-  background-color: var(--link-color);
+}
+
+.contact-section textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.contact-section button {
+  background-color: #0066cc;
+  color: white;
   border: none;
-  height: 50px;
+  padding: 12px 20px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: .1s;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  align-self: flex-start;
 }
 
-.contact-section .group form button:hover {
-  filter: brightness(.9);
-}
-h2 {
-    text-align: center;
-    color: #333;
-    margin-top: 20px;
+.contact-section button:hover {
+  background-color: #004080;
 }
 
-/* Styling for the dl element */
-dl {
-    width: 80%;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-/* Styling for the dt (term) elements */
-dt {
-    font-weight: bold;
-    color: #333;
-    margin-bottom: 8px;
-}
-
-/* Styling for the dd (description) elements */
-dd {
-    margin-bottom: 16px;
-    color: #555;
-}
-
-/* Customizing the placeholder text */
-dd::before {
-    content: "Not Provided";
-    font-style: italic;
-    color: #bbb;
-}
-
-/* Adding custom hover effect for each term */
-dt:hover {
-    color: #1e90ff;
-    cursor: pointer;
-}
-
-/* Responsive Styling */
+/* Responsive Design */
 @media (max-width: 768px) {
-    dl {
-        width: 90%;
-    }
-}
-
-@media (max-width: 850px) {
-  /* SECTION 1: Hero */
-  .hero-section .text h2 {
-    font-size: 35px;
-  }
-}
-
-@media (max-width: 740px) {
-  /* SECTION 1: Hero */
-  .hero-section {
-    flex-direction: column-reverse;
-  }
-
-  .hero-section .headshot img {
-    width: 300px;
-  }
-
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    text-align: center;
-  }
-
-  .testimony-section .group {
-    flex-direction: column;
-  }
-
-  /* SECTION 4: Contact */
+  .hero-section,
+  .testimony-section .group,
   .contact-section .group {
     flex-direction: column;
   }
-}
-
-@media (max-width: 600px) {
-  /* NAVBAR */
+  
+  .hero-section .headshot {
+    max-width: 100%;
+    order: -1;
+    margin-bottom: 30px;
+  }
+  
+  .academic-details-section dl {
+    grid-template-columns: 1fr;
+  }
+  
+  .academic-details-section dt {
+    margin-top: 15px;
+  }
+  
   nav {
-    padding: 0 20px;
+    flex-direction: column;
+    gap: 15px;
   }
-
-  nav .right a {
-    font-size: 22px;
-  }
-
-  nav .right a:last-child {
-    color: var(--text-color);
-    background-color: transparent;
-    padding: 0;
-  }
-
-  nav .right a span {
-    display: none;
-  }
-
-  /* SECTION 1: Hero */
-  .hero-section {
-    padding: 0 20px;
-  }
-
-  .hero-section .text h2 {
-    font-size: 30px;
-  }
-
-  /* SECTION 2: Skills */
-  .skills-section {
-    padding: 0 20px;
-  }
-
-  .skills-section .cells .cell span {
-    font-size: 16px;
-  }
-
-  /* SECTION 3: Testimony */
-  .testimony-section {
-    padding: 0 20px;
-  }
-
-  /* SECTION 4: Contact */
-  .contact-section {
-    padding: 0 20px;
+  
+  nav .right {
+    width: 100%;
+    justify-content: space-between;
   }
 }
