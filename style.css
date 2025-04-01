@@ -247,6 +247,55 @@ nav .right a span {
 .contact-section .group form button:hover {
   filter: brightness(.9);
 }
+h2 {
+    text-align: center;
+    color: #333;
+    margin-top: 20px;
+}
+
+/* Styling for the dl element */
+dl {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Styling for the dt (term) elements */
+dt {
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 8px;
+}
+
+/* Styling for the dd (description) elements */
+dd {
+    margin-bottom: 16px;
+    color: #555;
+}
+
+/* Customizing the placeholder text */
+dd::before {
+    content: "Not Provided";
+    font-style: italic;
+    color: #bbb;
+}
+
+/* Adding custom hover effect for each term */
+dt:hover {
+    color: #1e90ff;
+    cursor: pointer;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    dl {
+        width: 90%;
+    }
+}
 
 @media (max-width: 850px) {
   /* SECTION 1: Hero */
