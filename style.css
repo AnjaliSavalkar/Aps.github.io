@@ -12,6 +12,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  background-color: #fafafa;
 }
 
 a {
@@ -54,6 +55,11 @@ nav {
   align-items: center;
   padding: 20px 0;
   border-bottom: 1px solid #eee;
+  background-color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
 nav .left a {
@@ -72,10 +78,14 @@ nav .right a {
   align-items: center;
   gap: 5px;
   color: #555;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: all 0.3s;
 }
 
 nav .right a:hover {
   color: #0066cc;
+  background-color: #f5f8ff;
 }
 
 /* Hero Section */
@@ -84,6 +94,7 @@ nav .right a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 40px;
+  padding: 80px 0;
 }
 
 .hero-section .text {
@@ -93,6 +104,9 @@ nav .right a:hover {
 .hero-section h2 {
   font-size: 2.8rem;
   margin-bottom: 20px;
+  background: linear-gradient(to right, #0066cc, #4dabf7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-section h2::after {
@@ -103,6 +117,7 @@ nav .right a:hover {
   font-size: 1.1rem;
   margin-bottom: 30px;
   color: #555;
+  line-height: 1.8;
 }
 
 .hero-section .links {
@@ -115,16 +130,20 @@ nav .right a:hover {
   display: flex;
   align-items: center;
   gap: 8px;
-  padding: 8px 16px;
-  background-color: #f5f5f5;
-  border-radius: 5px;
+  padding: 10px 18px;
+  background-color: #f5f8ff;
+  border-radius: 6px;
   color: #333;
   transition: all 0.3s;
+  border: 1px solid #e0e0ff;
 }
 
 .hero-section .links a:hover {
   background-color: #0066cc;
   color: white;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,102,204,0.2);
+  border-color: transparent;
 }
 
 .hero-section .headshot {
@@ -134,17 +153,24 @@ nav .right a:hover {
 
 .hero-section .headshot img {
   width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.5s;
 }
-/* Enhanced Academic Details Section */
+
+.hero-section .headshot img:hover {
+  transform: scale(1.03);
+}
+
+/* Academic Details Section */
 .academic-details-section {
-  background-color: #f8f9fa;
+  background-color: white;
   border-radius: 12px;
   padding: 40px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
   position: relative;
   overflow: hidden;
+  margin: 20px 0;
 }
 
 .academic-details-section::before {
@@ -175,13 +201,12 @@ nav .right a:hover {
   background: linear-gradient(to right, #0066cc, transparent);
 }
 
-/* Create a modern two-column layout for the definition list */
 .academic-details-section dl {
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 16px;
   margin-bottom: 30px;
-  background-color: white;
+  background-color: #f8f9fa;
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.03);
@@ -216,7 +241,6 @@ nav .right a:hover {
   border-bottom: none;
 }
 
-/* Style for the portfolio topic specifically */
 .academic-details-section dt:last-of-type + dd {
   font-weight: 500;
   color: #0066cc;
@@ -228,7 +252,7 @@ nav .right a:hover {
   font-size: 1.05rem;
   margin-top: 20px;
   padding: 20px;
-  background-color: white;
+  background-color: #f8f9fa;
   border-radius: 8px;
   box-shadow: 0 3px 10px rgba(0,0,0,0.03);
   border-left: 3px solid #0066cc;
@@ -247,34 +271,22 @@ nav .right a:hover {
   100% { background-position: 0% 50%; }
 }
 
-/* Responsive design for smaller screens */
-@media (max-width: 768px) {
-  .academic-details-section {
-    padding: 30px 20px;
-  }
-  
-  .academic-details-section dl {
-    grid-template-columns: 1fr;
-  }
-  
-  .academic-details-section dt {
-    margin-top: 15px;
-  }
-  
-  .academic-details-section dd {
-    padding-left: 18px;
-  }
-}
 /* Skills Section */
+.skills-section {
+  padding: 60px 0;
+}
+
 .skills-section .text {
   margin-bottom: 30px;
   color: #555;
+  line-height: 1.8;
 }
 
 .skills-section .cells {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
+  justify-content: center;
 }
 
 .skills-section .cell {
@@ -282,28 +294,46 @@ nav .right a:hover {
   flex-direction: column;
   align-items: center;
   background-color: white;
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  width: 120px;
-  transition: transform 0.3s;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+  width: 150px;
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
 }
 
 .skills-section .cell:hover {
-  transform: translateY(-5px);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+  border-color: #e0e0ff;
 }
 
 .skills-section .cell img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 10px;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+  transition: transform 0.3s;
+}
+
+.skills-section .cell:hover img {
+  transform: scale(1.1);
 }
 
 .skills-section .cell span {
   font-weight: 600;
+  color: #333;
+  font-size: 1.1rem;
 }
 
 /* Projects Section */
+.testimony-section {
+  background-color: white;
+  padding: 60px 0;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
 .testimony-section .group {
   display: flex;
   gap: 40px;
@@ -318,15 +348,27 @@ nav .right a:hover {
 .testimony-section .person-details img {
   width: 100%;
   max-width: 250px;
-  border-radius: 8px;
-  margin-bottom: 15px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.testimony-section .person-details img:hover {
+  transform: scale(1.05);
 }
 
 .testimony-section .person-details p:first-of-type {
   font-weight: 600;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   margin-bottom: 10px;
+  color: #0066cc;
+}
+
+.testimony-section .person-details p:last-of-type {
+  color: #666;
+  line-height: 1.7;
+  padding: 0 15px;
 }
 
 .testimony-section .text {
@@ -334,29 +376,40 @@ nav .right a:hover {
   font-style: italic;
   color: #555;
   position: relative;
-  padding: 20px;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  line-height: 1.8;
 }
 
 .testimony-section .text::before {
   content: '❝';
-  font-size: 3rem;
-  color: #ddd;
+  font-size: 4rem;
+  color: #e0e0ff;
   position: absolute;
   top: -20px;
   left: -10px;
 }
 
 /* Contact Section */
+.contact-section {
+  padding: 60px 0;
+}
+
 .contact-section .group {
   display: flex;
   gap: 40px;
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
 .contact-section .text {
   flex: 1;
   color: #555;
+  line-height: 1.8;
 }
 
 .contact-section form {
@@ -374,31 +427,42 @@ nav .right a:hover {
 .contact-section input,
 .contact-section textarea {
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 12px;
   border: 1px solid #ddd;
-  border-radius: 5px;
+  border-radius: 6px;
   font-family: 'Poppins', sans-serif;
+  transition: all 0.3s;
+}
+
+.contact-section input:focus,
+.contact-section textarea:focus {
+  outline: none;
+  border-color: #0066cc;
+  box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
 }
 
 .contact-section textarea {
   resize: vertical;
-  min-height: 100px;
+  min-height: 120px;
 }
 
 .contact-section button {
   background-color: #0066cc;
   color: white;
   border: none;
-  padding: 12px 20px;
-  border-radius: 5px;
+  padding: 14px 24px;
+  border-radius: 6px;
   cursor: pointer;
   font-weight: 600;
-  transition: background-color 0.3s;
+  font-size: 1rem;
+  transition: all 0.3s;
   align-self: flex-start;
 }
 
 .contact-section button:hover {
   background-color: #004080;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,102,204,0.2);
 }
 
 /* Responsive Design */
@@ -415,6 +479,10 @@ nav .right a:hover {
     margin-bottom: 30px;
   }
   
+  .academic-details-section {
+    padding: 30px 20px;
+  }
+  
   .academic-details-section dl {
     grid-template-columns: 1fr;
   }
@@ -423,13 +491,44 @@ nav .right a:hover {
     margin-top: 15px;
   }
   
+  .academic-details-section dd {
+    padding-left: 18px;
+  }
+  
   nav {
     flex-direction: column;
     gap: 15px;
+    padding: 15px 0;
   }
   
   nav .right {
     width: 100%;
     justify-content: space-between;
+  }
+  
+  section {
+    padding: 40px 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+  
+  .skills-section .cell {
+    width: calc(50% - 25px);
+  }
+}
+
+@media (max-width: 480px) {
+  .skills-section .cell {
+    width: 100%;
+  }
+  
+  .hero-section .links {
+    flex-direction: column;
+  }
+  
+  .hero-section .links a {
+    width: 100%;
   }
 }
