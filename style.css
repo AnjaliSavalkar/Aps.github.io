@@ -146,21 +146,6 @@ nav .right a:hover {
   border-color: transparent;
 }
 
-.hero-section .headshot {
-  flex: 1;
-  max-width: 350px;
-}
-
-.hero-section .headshot img {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.5s;
-}
-
-.hero-section .headshot img:hover {
-  transform: scale(1.03);
-}
 
 /* Academic Details Section */
 .academic-details-section {
@@ -269,60 +254,6 @@ nav .right a:hover {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-}
-
-/* Skills Section */
-.skills-section {
-  padding: 60px 0;
-}
-
-.skills-section .text {
-  margin-bottom: 30px;
-  color: #555;
-  line-height: 1.8;
-}
-
-.skills-section .cells {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 25px;
-  justify-content: center;
-}
-
-.skills-section .cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: white;
-  padding: 25px;
-  border-radius: 10px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
-  width: 150px;
-  transition: all 0.3s;
-  border: 1px solid #f0f0f0;
-}
-
-.skills-section .cell:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-  border-color: #e0e0ff;
-}
-
-.skills-section .cell img {
-  width: 60px;
-  height: 60px;
-  margin-bottom: 15px;
-  transition: transform 0.3s;
-}
-
-.skills-section .cell:hover img {
-  transform: scale(1.1);
-}
-
-.skills-section .cell span {
-  font-weight: 600;
-  color: #333;
-  font-size: 1.1rem;
 }
 
 /* Projects Section */
