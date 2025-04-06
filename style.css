@@ -981,7 +981,7 @@ nav .right a:hover {
   border-left: 3px solid #0066cc;
 }
 /* Projects Section */
-.references-section {
+/* .references-section {
   background-color: white;
   padding: 60px 0;
   border-radius: 12px;
@@ -1060,7 +1060,7 @@ nav .right a:hover {
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
 }
- */
+ 
 
 
 .references-section {
@@ -1083,7 +1083,97 @@ nav .right a:hover {
   background: linear-gradient(to bottom, #0066cc, #4dabf7);
 }
 
+ */
+.references-section {
+  background-color: white;
+  padding: 60px 0;
+  border-radius: 12px;
+  margin: 20px 0;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  position: relative; /* Add this to enable positioning of the ::before pseudo-element */
+  overflow: hidden; /* Add this to prevent the pseudo-element from overflowing */
+}
 
+.references-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0066cc, #4dabf7);
+}
+
+.references-section .group {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.references-section .person-details {
+  flex: 1;
+  text-align: center;
+}
+
+.references-section .person-details img {
+  width: 100%;
+  max-width: 250px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s;
+}
+
+.references-section .person-details img:hover {
+  transform: scale(1.05);
+}
+
+.references-section .person-details p:first-of-type {
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #0066cc;
+}
+
+.references-section .person-details p:last-of-type {
+  color: #666;
+  line-height: 1.7;
+  padding: 0 15px;
+}
+
+.references-section .text {
+  flex: 2;
+  font-style: italic;
+  color: #555;
+  position: relative;
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  line-height: 1.8;
+}
+
+.references-section .text::before {
+  content: '❝';
+  font-size: 4rem;
+  color: #e0e0ff;
+  position: absolute;
+  top: -20px;
+  left: -10px;
+}
+
+/* Animated gradient border on hover */
+.references-section:hover::before {
+  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+}
+
+@keyframes gradientBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
 /* Contact Section */
 .contact-section {
   padding: 60px 0;
