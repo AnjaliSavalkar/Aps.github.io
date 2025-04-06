@@ -1046,7 +1046,7 @@ nav .right a:hover {
   top: -20px;
   left: -10px;
 }
-..references-section::before {
+.references-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1055,6 +1055,12 @@ nav .right a:hover {
   height: 100%;
   background: linear-gradient(to bottom, #0066cc, #4dabf7);
 }
+.references-section:hover::before {
+  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+}
+
 
 /* Contact Section */
 .contact-section {
@@ -1128,6 +1134,20 @@ nav .right a:hover {
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(0,102,204,0.2);
 }
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0066cc, #4dabf7);
+}
+.contact-section:hover::before {
+  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+}
 
 /* Responsive Design */
 @media (max-width: 768px) {
@@ -1197,3 +1217,4 @@ nav .right a:hover {
     width: 100%;
   }
 }
+
