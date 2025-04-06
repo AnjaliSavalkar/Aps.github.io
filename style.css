@@ -981,7 +981,7 @@ nav .right a:hover {
   border-left: 3px solid #0066cc;
 }
 /* Projects Section */
-.testimony-section {
+.references-section {
   background-color: white;
   padding: 60px 0;
   border-radius: 12px;
@@ -989,18 +989,18 @@ nav .right a:hover {
   box-shadow: 0 5px 20px rgba(0,0,0,0.05);
 }
 
-.testimony-section .group {
+.references-section .group {
   display: flex;
   gap: 40px;
   align-items: flex-start;
 }
 
-.testimony-section .person-details {
+.references-section .person-details {
   flex: 1;
   text-align: center;
 }
 
-.testimony-section .person-details img {
+.references-section .person-details img {
   width: 100%;
   max-width: 250px;
   border-radius: 10px;
@@ -1009,24 +1009,24 @@ nav .right a:hover {
   transition: transform 0.3s;
 }
 
-.testimony-section .person-details img:hover {
+.references-section .person-details img:hover {
   transform: scale(1.05);
 }
 
-.testimony-section .person-details p:first-of-type {
+.references-section .person-details p:first-of-type {
   font-weight: 600;
   font-size: 1.2rem;
   margin-bottom: 10px;
   color: #0066cc;
 }
 
-.testimony-section .person-details p:last-of-type {
+.references-section .person-details p:last-of-type {
   color: #666;
   line-height: 1.7;
   padding: 0 15px;
 }
 
-.testimony-section .text {
+.references-section .text {
   flex: 2;
   font-style: italic;
   color: #555;
@@ -1038,7 +1038,7 @@ nav .right a:hover {
   line-height: 1.8;
 }
 
-.testimony-section .text::before {
+.references-section .text::before {
   content: '❝';
   font-size: 4rem;
   color: #e0e0ff;
