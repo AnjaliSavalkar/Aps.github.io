@@ -1046,7 +1046,7 @@ nav .right a:hover {
   top: -20px;
   left: -10px;
 }
-.references-section::before {
+/* .references-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -1059,6 +1059,28 @@ nav .right a:hover {
   background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
+}
+ */
+
+
+.references-section {
+  position: relative;
+  padding: 40px;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.references-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0066cc, #4dabf7);
 }
 
 
