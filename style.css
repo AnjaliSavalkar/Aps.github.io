@@ -852,7 +852,134 @@ nav .right a:hover {
   border-radius: 8px;
   border-left: 3px solid #0066cc;
 }
+/*business case study   */
+.Business-case-study-section {
+  background-color: white;
+  border-radius: 12px;
+  padding: 40px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  position: relative;
+  overflow: hidden;
+  margin: 20px 0;
+}
 
+.Business-case-study-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0066cc, #4dabf7);
+}
+
+.Business-case-study-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 35px;
+  color: #0066cc;
+  position: relative;
+  display: inline-block;
+}
+
+.Business-case-study-section h2::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(to right, #0066cc, transparent);
+}
+
+.problem-Business_case_study {
+  margin-bottom: 40px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 3px 15px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.problem-Business_case_study:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.problem-Business_case_study h3 {
+  padding: 15px 20px;
+  background: linear-gradient(to right, #0066cc, #4dabf7);
+  color: white;
+  font-size: 1.3rem;
+  margin: 0;
+}
+
+.problem-details_business_case_study {
+  padding: 20px;
+}
+
+.problem-details_business_case_study .statement,
+.problem-details_business_case_study.objectives,
+.problem-details_business_case_study .approach {
+  margin-bottom: 20px;
+}
+
+.problem-details_business_case_study h4 {
+  font-size: 1.1rem;
+  color: #0066cc;
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.problem-details_business_case_study h4::before {
+  content: '';
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background-color: #0066cc;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.problem-details_business_case_study p {
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.problem-details_business_case_study code {
+  background-color: #eef1f5;
+  padding: 2px 5px;
+  border-radius: 4px;
+  font-family: monospace;
+  color: #d63384;
+}
+
+.problem-details_business_case_study ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+
+.problem-details_business_case_study ul li {
+  position: relative;
+  padding-left: 15px;
+  margin-bottom: 8px;
+  color: #555;
+}
+
+.problem-details_business_case_study ul li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: #0066cc;
+}
+
+.problem-details_business_case_study .approach {
+  background-color: #e9f7fd;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 3px solid #0066cc;
+}
 /* Projects Section */
 .testimony-section {
   background-color: white;
