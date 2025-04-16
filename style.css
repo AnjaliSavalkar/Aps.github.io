@@ -126,7 +126,7 @@ nav .right a:hover {
 .hero-section {
   background: linear-gradient(135deg, #0d47a1, #1de9b6);
   color: white;
-  height: 50vh; /* Half of the screen */
+  height: 20vh; /* Half of the screen */
   display: flex;
   align-items: center;
   justify-content: center;
