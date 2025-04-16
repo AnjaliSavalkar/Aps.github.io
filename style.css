@@ -122,10 +122,11 @@ nav .right a:hover {
   color: #555;
   line-height: 1.8;
 } */
+/* Hero Section */
 .hero-section {
   background: linear-gradient(135deg, #0d47a1, #1de9b6);
   color: white;
-  height: 50vh;
+  height: 50vh; /* Half of the screen */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -135,50 +136,38 @@ nav .right a:hover {
 
 .content {
   max-width: 800px;
+  width: 100%;
 }
 
 .hero-section h1 {
-  font-size: 3rem;
+  font-size: 2.8rem;
   font-weight: 800;
   line-height: 1.2;
-  color: #ffffff; /* White for title */
+  color: #ffffff;
+  margin-bottom: 1rem;
 }
 
 .highlight {
   display: block;
   font-weight: 800;
-  font-size: 3rem;
-  color: #ffffff; /* Keep consistent white */
+  font-size: 2.8rem;
+  color: #ffffff;
 }
 
 .hero-section p {
-  margin: 1.5rem 0;
-  font-size: 1.25rem;
+  margin: 1rem 0 2rem;
+  font-size: 1.2rem;
   line-height: 1.6;
-  color: #b2ebf2; /* Light teal similar to image */
+  color: #b2ebf2;
 }
 
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.5);
-}
+/* Buttons / Links */
 .hero-section .links {
   display: flex;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 15px;
+  margin-top: 1rem;
 }
 
 .hero-section .links a {
@@ -191,15 +180,18 @@ nav .right a:hover {
   color: #333;
   transition: all 0.3s;
   border: 1px solid #e0e0ff;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .hero-section .links a:hover {
   background-color: #0066cc;
   color: white;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,102,204,0.2);
+  box-shadow: 0 5px 15px rgba(0, 102, 204, 0.2);
   border-color: transparent;
 }
+
 
 /* Academic Details Section */
 .academic-details-section {
