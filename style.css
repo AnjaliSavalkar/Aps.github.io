@@ -124,9 +124,9 @@ nav .right a:hover {
 } */
 /* Hero Section */
 .hero-section {
-  background: linear-gradient(135deg, #1e3c72, #2a5298, #00c9ff);
+ background: linear-gradient(135deg, #4facfe, #00f2fe); 
   color: white;
-  min-height: 80vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
