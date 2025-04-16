@@ -27,56 +27,7 @@ a:hover {
   color: #004080;
 }
 
-.hero-section {
-  background: linear-gradient(135deg, #0d47a1, #1de9b6);
-  color: white;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-}
 
-.content {
-  max-width: 800px;
-}
-
-h1 {
-  font-size: 3rem;
-  font-weight: 800;
-  line-height: 1.2;
-}
-
-.highlight {
-  display: block;
-  font-weight: 800;
-  font-size: 3rem;
-}
-
-p {
-  margin: 1.5rem 0;
-  font-size: 1.25rem;
-  line-height: 1.6;
-  color: #e0f7fa;
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  color: #ffffff;
-  background-color: rgba(255, 255, 255, 0.2);
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: rgba(255, 255, 255, 0.4);
-  border-color: rgba(255, 255, 255, 0.5);
-}
 section {
   padding: 60px 0;
   border-bottom: 1px solid #eee;
@@ -141,18 +92,18 @@ nav .right a:hover {
 }
 
 /* Hero Section */
-.hero-section {
+/* .hero-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 40px;
   padding: 80px 0;
 }
-
-.hero-section .text {
+ */
+/* .hero-section .text {
   flex: 1;
-}
-
+} */
+/* 
 .hero-section h2 {
   font-size: 2.8rem;
   margin-bottom: 20px;
@@ -160,18 +111,70 @@ nav .right a:hover {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-
-.hero-section h2::after {
+ */
+/* .hero-section h2::after {
   display: none;
-}
+} */
 
-.hero-section p {
+/* .hero-section p {
   font-size: 1.1rem;
   margin-bottom: 30px;
   color: #555;
   line-height: 1.8;
+} */
+.hero-section {
+  background: linear-gradient(135deg, #0d47a1, #1de9b6);
+  color: white;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
 }
 
+.content {
+  max-width: 800px;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  line-height: 1.2;
+  color: #ffffff; /* White for title */
+}
+
+.highlight {
+  display: block;
+  font-weight: 800;
+  font-size: 3rem;
+  color: #ffffff; /* Keep consistent white */
+}
+
+.hero-section p {
+  margin: 1.5rem 0;
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: #b2ebf2; /* Light teal similar to image */
+}
+
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: rgba(255, 255, 255, 0.5);
+}
 .hero-section .links {
   display: flex;
   flex-wrap: wrap;
