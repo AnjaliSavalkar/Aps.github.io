@@ -264,29 +264,31 @@ nav .right a:hover {
   vertical-align: middle;
   max-height: 24px;
 }
-
-
 /* Skills Section Styling */
 #skills {
   padding: 40px;
   background-color: #f9f9f9;
   font-family: 'Segoe UI', sans-serif;
-  display: flex;
-  flex-direction: column; /* Stack categories vertically */
-  gap: 40px; /* Add space between categories */
+  text-align: center;
 }
 
 #skills h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: #232f3e;
-  width: 100%; /* Ensure title is on top */
+}
+
+.skills-row {
+  display: flex; /* Align categories horizontally */
+  justify-content: center; /* Center categories */
+  gap: 30px; /* Space between categories */
 }
 
 .skill-category {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
 }
 
 .skill-category h3 {
@@ -297,8 +299,7 @@ nav .right a:hover {
 
 .skills-list {
   display: flex; /* Display items horizontally within each category */
-  gap: 20px; /* Space between skill items */
-  justify-content: center; /* Align items horizontally at center */
+  gap: 15px; /* Space between skill items */
 }
 
 .skill-item {
@@ -319,8 +320,6 @@ nav .right a:hover {
   margin: 0;
   color: #111;
 }
-
-
 
 
 
