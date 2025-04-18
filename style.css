@@ -1,5 +1,3 @@
-
-
 /* Global Styles */
 * {
   margin: 0;
@@ -26,7 +24,6 @@ a {
 a:hover {
   color: #004080;
 }
-
 
 section {
   padding: 60px 0;
@@ -92,43 +89,8 @@ nav .right a:hover {
 }
 
 /* Hero Section */
-/* .hero-section {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 40px;
-  padding: 80px 0;
-}
- */
-/* .hero-section .text {
-  flex: 1;
-} */
-/* 
-.hero-section h2 {
-  font-size: 2.8rem;
-  margin-bottom: 20px;
-  background: linear-gradient(to right, #0066cc, #4dabf7);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
- */
-/* .hero-section h2::after {
-  display: none;
-} */
-
-/* .hero-section p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #555;
-  line-height: 1.8;
-} */
-/* Hero Section */
 .hero-section {
-/*  background: linear-gradient(135deg, #89f7fe, #66a6ff); */
-/*   background: linear-gradient(to bottom, #00c6ff, #ffffff); */
   background: linear-gradient(to bottom, #00b4db, #e6f4ff);
-
-
   color: white;
   min-height: 60vh;
   display: flex;
@@ -192,9 +154,10 @@ nav .right a:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
-
-/* Academic Details Section */
-.academic-details-section {
+/* Section Styling - Common for all sections */
+.academic-details-section,
+.problem-statements-section,
+.Business-case-study-section {
   background-color: white;
   border-radius: 12px;
   padding: 40px;
@@ -204,7 +167,9 @@ nav .right a:hover {
   margin: 20px 0;
 }
 
-.academic-details-section::before {
+.academic-details-section::before,
+.problem-statements-section::before,
+.Business-case-study-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -214,7 +179,9 @@ nav .right a:hover {
   background: linear-gradient(to bottom, #0066cc, #4dabf7);
 }
 
-.academic-details-section h2 {
+.academic-details-section h2,
+.problem-statements-section h2,
+.Business-case-study-section h2 {
   font-size: 2.5rem;
   margin-bottom: 35px;
   color: #0066cc;
@@ -222,7 +189,9 @@ nav .right a:hover {
   display: inline-block;
 }
 
-.academic-details-section h2::after {
+.academic-details-section h2::after,
+.problem-statements-section h2::after,
+.Business-case-study-section h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -232,6 +201,7 @@ nav .right a:hover {
   background: linear-gradient(to right, #0066cc, transparent);
 }
 
+/* Academic Details Section */
 .academic-details-section dl {
   display: grid;
   grid-template-columns: 1fr 2fr;
@@ -272,75 +242,7 @@ nav .right a:hover {
   border-bottom: none;
 }
 
-.academic-details-section dt:last-of-type + dd {
-  font-weight: 500;
-  color: #0066cc;
-}
-
-.academic-details-section p {
-  color: #555;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  margin-top: 20px;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.03);
-  border-left: 3px solid #0066cc;
-}
-
-/* Animated gradient border on hover */
-.academic-details-section:hover::before {
-  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
-  background-size: 200% 200%;
-  animation: gradientBorder 3s ease infinite;
-}
-
-@keyframes gradientBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-/* Problem Statements & Objectives Section */
-.problem-statements-section {
-  background-color: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  position: relative;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.problem-statements-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-
-.problem-statements-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 35px;
-  color: #0066cc;
-  position: relative;
-  display: inline-block;
-}
-
-.problem-statements-section h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #0066cc, transparent);
-}
-
+/* Problem Statements Section */
 .problem {
   margin-bottom: 40px;
   background-color: #f8f9fa;
@@ -355,21 +257,12 @@ nav .right a:hover {
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.problem h3 {
-  padding: 15px 20px;
-  background: linear-gradient(to right, #0066cc, #4dabf7);
-  color: white;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
 .problem-details {
   padding: 20px;
 }
 
 .problem-details .statement,
-.problem-details .objectives,
-.problem-details .approach {
+.problem-details .objectives {
   margin-bottom: 20px;
 }
 
@@ -397,654 +290,58 @@ nav .right a:hover {
   margin-bottom: 10px;
 }
 
-.problem-details code {
-  background-color: #eef1f5;
-  padding: 2px 5px;
-  border-radius: 4px;
-  font-family: monospace;
-  color: #d63384;
+/* Business Case Study Section */
+.use-cases-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.problem-details ul {
-  list-style-type: none;
-  padding-left: 20px;
-}
-
-.problem-details ul li {
-  position: relative;
-  padding-left: 15px;
-  margin-bottom: 8px;
-  color: #555;
-}
-
-.problem-details ul li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #0066cc;
-}
-
-.problem-details .approach {
-  background-color: #e9f7fd;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 3px solid #0066cc;
-}
-/*business case study   */
-.Business-case-study-section {
-  background-color: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  position: relative;
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.Business-case-study-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-
-.Business-case-study-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 35px;
-  color: #0066cc;
-  position: relative;
-  display: inline-block;
-}
-
-.Business-case-study-section h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #0066cc, transparent);
-}
-
-.problem-Business_case_study {
-  margin-bottom: 40px;
+.use-case {
   background-color: #f8f9fa;
   border-radius: 10px;
-  overflow: hidden;
+  padding: 20px;
   box-shadow: 0 3px 15px rgba(0,0,0,0.05);
   transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.problem-Business_case_study:hover {
+.use-case:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-.problem-Business_case_study h3 {
-  padding: 15px 20px;
-  background: linear-gradient(to right, #0066cc, #4dabf7);
-  color: white;
-  font-size: 1.3rem;
-  margin: 0;
-}
-
-.problem-details_business_case_study {
-  padding: 20px;
-}
-
-.problem-details_business_case_study .statement,
-.problem-details_business_case_study.objectives,
-.problem-details_business_case_study .approach {
-  margin-bottom: 20px;
-}
-
-.problem-details_business_case_study h4 {
+.use-case h4 {
   font-size: 1.1rem;
   color: #0066cc;
   margin-bottom: 10px;
-  display: flex;
-  align-items: center;
 }
 
-.problem-details_business_case_study h4::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #0066cc;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-.code-link a {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 6px;
-  transition: background-color 0.2s ease-in-out;
-}
-
-.code-link a:hover {
-  background-color: #0056b3;
-}
-
-
-.problem-details_business_case_study p {
+.use-case p {
   color: #555;
   line-height: 1.7;
   margin-bottom: 10px;
 }
 
-.problem-details_business_case_study code {
-  background-color: #eef1f5;
-  padding: 2px 5px;
-  border-radius: 4px;
-  font-family: monospace;
-  color: #d63384;
-}
-
-.problem-details_business_case_study ul {
-  list-style-type: none;
-  padding-left: 20px;
-}
-
-.problem-details_business_case_study ul li {
-  position: relative;
-  padding-left: 15px;
-  margin-bottom: 8px;
-  color: #555;
-}
-
-.problem-details_business_case_study ul li::before {
-  content: '→';
-  position: absolute;
-  left: 0;
-  color: #0066cc;
-}
-
-.problem-details_business_case_study .approach {
-  background-color: #e9f7fd;
-  padding: 15px;
-  border-radius: 8px;
-  border-left: 3px solid #0066cc;
-}
-/* Projects Section */
-/* .references-section {
-  background-color: white;
-  padding: 60px 0;
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.references-section .group {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.references-section .person-details {
-  flex: 1;
-  text-align: center;
-}
-
-.references-section .person-details img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.references-section .person-details img:hover {
-  transform: scale(1.05);
-}
-
-.references-section .person-details p:first-of-type {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #0066cc;
-}
-
-.references-section .person-details p:last-of-type {
-  color: #666;
-  line-height: 1.7;
-  padding: 0 15px;
-}
-
-.references-section .text {
-  flex: 2;
-  font-style: italic;
-  color: #555;
-  position: relative;
-  padding: 25px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  line-height: 1.8;
-}
-
-.references-section .text::before {
-  content: '❝';
-  font-size: 4rem;
-  color: #e0e0ff;
-  position: absolute;
-  top: -20px;
-  left: -10px;
-}
-/* .references-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-.references-section:hover::before {
-  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
-  background-size: 200% 200%;
-  animation: gradientBorder 3s ease infinite;
-}
- 
-
-
-.references-section {
-  position: relative;
-  padding: 40px;
-  background-color: white;
-  border-radius: 12px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  overflow: hidden;
-  margin: 20px 0;
-}
-
-.references-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-
- */
-/* .references-section {
-  background-color: white;
-  padding: 60px 0;
-  border-radius: 12px;
-  margin: 20px 0;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  position: relative;
-  overflow: hidden; 
-}
-.references-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 35px;
-  color: #0066cc;
-  position: relative;
-  display: inline-block;
-}
-
-.references-section h2::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(to right, #0066cc, transparent);
-}
-
-.references-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-
-.references-section .group {
-  display: flex;
-  gap: 40px;
-  align-items: flex-start;
-}
-
-.references-section .person-details {
-  flex: 1;
-  text-align: center;
-}
-
-.references-section .person-details img {
-  width: 100%;
-  max-width: 250px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  transition: transform 0.3s;
-}
-
-.references-section .person-details img:hover {
-  transform: scale(1.05);
-}
-
-.references-section .person-details p:first-of-type {
-  font-weight: 600;
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #0066cc;
-}
-
-.references-section .person-details p:last-of-type {
-  color: #666;
-  line-height: 1.7;
-  padding: 0 15px;
-}
-
-.references-section .text {
-  flex: 2;
-  font-style: italic;
-  color: #555;
-  position: relative;
-  padding: 25px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  line-height: 1.8;
-}
-
-.references-section .text::before {
-  content: '❝';
-  font-size: 4rem;
-  color: #e0e0ff;
-  position: absolute;
-  top: -20px;
-  left: -10px;
-}
-
-
-.references-section:hover::before {
-  background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
-  background-size: 200% 200%;
-  animation: gradientBorder 3s ease infinite;
-}
-
+/* Animation */
 @keyframes gradientBorder {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
-} */
-
-
-
-
-
-.references-section {
-    background-color: white;
-    padding: 60px 0;
-    border-radius: 12px;
-    margin: 20px 0;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-    position: relative;
-    overflow: hidden;
 }
 
-.references-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 35px;
-    color: #0066cc;
-    position: relative;
-    display: inline-block;
-}
-
-.references-section h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, #0066cc, transparent);
-}
-
-.references-section::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-
-.references-section .group {
-    display: flex;
-    gap: 40px;
-    align-items: flex-start;
-}
-
-.references-section .person-details {
-    flex: 1;
-    text-align: center;
-}
-
-.references-section .person-details img {
-    width: 100%;
-    max-width: 250px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-}
-
-.references-section .person-details img:hover {
-    transform: scale(1.05);
-}
-
-.references-section .person-details p:first-of-type {
-    font-weight: 600;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    color: #0066cc;
-}
-
-.references-section .person-details p:last-of-type {
-    color: #666;
-    line-height: 1.7;
-    padding: 0 15px;
-}
-
-.references-section .text {
-    flex: 2;
-    font-style: italic;
-    color: #555;
-    position: relative;
-    padding: 25px;
-    background-color: #f8f9fa;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-    line-height: 1.8;
-}
-
-.references-section .text::before {
-    content: '❝';
-    font-size: 4rem;
-    color: #e0e0ff;
-    position: absolute;
-    top: -20px;
-    left: -10px;
-}
-
-
-.references-section:hover::before {
-    background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
-    background-size: 200% 200%;
-    animation: gradientBorder 3s ease infinite;
-}
-
-@keyframes gradientBorder {
-    0% {
-        background-position: 0% 50%;
-    }
-    50% {
-        background-position: 100% 50%;
-    }
-    100% {
-        background-position: 0% 50%;
-    }
-}
- 
-
-
-
-
-
-
-
-
-
-
-/* Contact Section */
-/*  .contact-section {
-  padding: 60px 0;
-}
-.contact-section h2 {
-    font-size: 2.5rem;
-    margin-bottom: 35px;
-    color: #0066cc;
-    position: relative;
-    display: inline-block;
-}
-
-.contact-section h2::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -10px;
-    width: 100%;
-    height: 3px;
-    background: linear-gradient(to right, #0066cc, transparent);
-}
-.contact-section .group {
-  display: flex;
-  gap: 40px;
-  background-color: white;
-  border-radius: 12px;
-  padding: 40px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.contact-section .text {
-  flex: 1;
-  color: #555;
-  line-height: 1.8;
-}
-
-.contact-section form {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.contact-section label {
-  margin-bottom: 5px;
-  font-weight: 600;
-  color: #444;
-}
-
-.contact-section input,
-.contact-section textarea {
-  margin-bottom: 20px;
-  padding: 12px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  font-family: 'Poppins', sans-serif;
-  transition: all 0.3s;
-}
-
-.contact-section input:focus,
-.contact-section textarea:focus {
-  outline: none;
-  border-color: #0066cc;
-  box-shadow: 0 0 0 3px rgba(0,102,204,0.1);
-}
-
-.contact-section textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-section button {
-  background-color: #0066cc;
-  color: white;
-  border: none;
-  padding: 14px 24px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 1rem;
-  transition: all 0.3s;
-  align-self: flex-start;
-}
-
-.contact-section button:hover {
-  background-color: #004080;
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0,102,204,0.2);
-}
-.contact-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(to bottom, #0066cc, #4dabf7);
-}
-.contact-section:hover::before {
+.academic-details-section:hover::before,
+.problem-statements-section:hover::before,
+.Business-case-study-section:hover::before {
   background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
-}  */
-
-
-@keyframes gradientBorder {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
+
 /* Responsive Design */
 @media (max-width: 768px) {
-  .hero-section,
-  .testimony-section .group,
-  .contact-section .group {
-    flex-direction: column;
-  }
-  
-  .hero-section .headshot {
-    max-width: 100%;
-    order: -1;
-    margin-bottom: 30px;
-  }
-  
   .academic-details-section,
-  .problem-statements-section {
+  .problem-statements-section,
+  .Business-case-study-section {
     padding: 30px 20px;
   }
   
@@ -1079,16 +376,12 @@ nav .right a:hover {
     font-size: 1.8rem;
   }
   
-  .skills-section .cell {
-    width: calc(50% - 25px);
+  .use-cases-container {
+    grid-template-columns: 1fr;
   }
 }
 
 @media (max-width: 480px) {
-  .skills-section .cell {
-    width: 100%;
-  }
-  
   .hero-section .links {
     flex-direction: column;
   }
@@ -1096,5 +389,12 @@ nav .right a:hover {
   .hero-section .links a {
     width: 100%;
   }
+  
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+  
+  .highlight {
+    font-size: 2.5rem;
+  }
 }
-
