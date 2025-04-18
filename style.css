@@ -266,16 +266,14 @@ nav .right a:hover {
 }
 
 
-
-
 /* Skills Section Styling */
 #skills {
   padding: 40px;
   background-color: #f9f9f9;
   font-family: 'Segoe UI', sans-serif;
-  display: flex; /* Display categories horizontally */
-  flex-wrap: wrap; /* Wrap items if they exceed the width */
-  gap: 20px; /* Add space between categories */
+  display: flex;
+  flex-direction: column; /* Stack categories vertically */
+  gap: 40px; /* Add space between categories */
 }
 
 #skills h2 {
@@ -289,7 +287,6 @@ nav .right a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 200px; /* Adjust the width of each skill category */
 }
 
 .skill-category h3 {
@@ -299,8 +296,9 @@ nav .right a:hover {
 }
 
 .skills-list {
-  display: flex; /* Display items horizontally */
-  gap: 15px; /* Space between skill items */
+  display: flex; /* Display items horizontally within each category */
+  gap: 20px; /* Space between skill items */
+  justify-content: center; /* Align items horizontally at center */
 }
 
 .skill-item {
@@ -321,7 +319,6 @@ nav .right a:hover {
   margin: 0;
   color: #111;
 }
-
 
 
 
