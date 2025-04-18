@@ -201,7 +201,7 @@ nav .right a:hover {
 
 .academic-details-section h2,
 .problem-statements-section h2,
-.Business-case-study-section h2
+.Business-case-study-section h2,
 .skills_section h2{
   font-size: 2.5rem;
   margin-bottom: 35px;
@@ -212,7 +212,7 @@ nav .right a:hover {
 
 .academic-details-section h2::after,
 .problem-statements-section h2::after,
-.Business-case-study-section h2::after 
+.Business-case-study-section h2::after,
 .skills_section h2::after{
   content: '';
   position: absolute;
@@ -269,19 +269,19 @@ nav .right a:hover {
   max-height: 24px;
 }
 /* Skills Section Styling */
-#skills {
+.skills_section {
   padding: 40px;
   background-color: #f9f9f9;
   font-family: 'Segoe UI', sans-serif;
   text-align: center;
 }
 
-/* #skills h2 {
+.skills_section h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: #232f3e;
 }
- */
+
 .skills-row {
   display: flex; /* Align categories horizontally */
   justify-content: center; /* Center categories */
@@ -448,7 +448,8 @@ nav .right a:hover {
 
 .academic-details-section:hover::before,
 .problem-statements-section:hover::before,
-.Business-case-study-section:hover::before {
+.Business-case-study-section:hover::before,
+.skills_section:hover::before {
   background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
@@ -458,7 +459,8 @@ nav .right a:hover {
 @media (max-width: 768px) {
   .academic-details-section,
   .problem-statements-section,
-  .Business-case-study-section {
+  .Business-case-study-section,
+  .skills_section {
     padding: 30px 20px;
   }
   
@@ -519,3 +521,4 @@ nav .right a:hover {
     font-size: 2.5rem;
   }
 }
+
