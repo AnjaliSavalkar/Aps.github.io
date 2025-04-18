@@ -138,7 +138,7 @@ nav .right a i {
   overflow: hidden;
 } */
 .hero-section {
-  background: linear-gradient(135deg, #4a90e2, #5da9f0);
+  background: linear-gradient(135deg, #8cb5e8, #5da9f0);
   color: var(--white);
   min-height: 70vh;
   display: flex;
