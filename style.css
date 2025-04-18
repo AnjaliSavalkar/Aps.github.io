@@ -98,6 +98,7 @@ nav .right a:hover {
   justify-content: center;
   text-align: center;
   padding: 2rem;
+  position: relative;
 }
 
 .content {
@@ -154,10 +155,28 @@ nav .right a:hover {
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
 }
 
+/* Custom Shape Divider */
+.custom-shape-divider-bottom-hero {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-hero svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 60px;
+}
+
 /* Section Styling - Common for all sections */
 .academic-details-section,
 .problem-statements-section,
-.Business-case-study-section {
+.Business-case-study-section,
+.skills_section{
   background-color: white;
   border-radius: 12px;
   padding: 40px;
@@ -169,7 +188,8 @@ nav .right a:hover {
 
 .academic-details-section::before,
 .problem-statements-section::before,
-.Business-case-study-section::before {
+.Business-case-study-section::before ,
+.skills_section::before{
   content: '';
   position: absolute;
   top: 0;
@@ -181,7 +201,8 @@ nav .right a:hover {
 
 .academic-details-section h2,
 .problem-statements-section h2,
-.Business-case-study-section h2 {
+.Business-case-study-section h2,
+.skills_section h2{
   font-size: 2.5rem;
   margin-bottom: 35px;
   color: #0066cc;
@@ -191,7 +212,8 @@ nav .right a:hover {
 
 .academic-details-section h2::after,
 .problem-statements-section h2::after,
-.Business-case-study-section h2::after {
+.Business-case-study-section h2::after,
+.skills_section h2::after{
   content: '';
   position: absolute;
   left: 0;
@@ -242,6 +264,71 @@ nav .right a:hover {
   border-bottom: none;
 }
 
+.academic-details-section dd img {
+  vertical-align: middle;
+  max-height: 24px;
+}
+/* Skills Section Styling */
+.skills_section {
+  padding: 40px;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+}
+
+.skills_section h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #232f3e;
+}
+
+.skills-row {
+  display: flex; /* Align categories horizontally */
+  justify-content: center; /* Center categories */
+  gap: 30px; /* Space between categories */
+}
+
+.skill-category {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+}
+
+.skill-category h3 {
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: #37475a;
+  display:flex;
+}
+
+.skills-list {
+  display: flex; /* Display items horizontally within each category */
+  gap: 15px; /* Space between skill items */
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skill-item img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+.skill-item p {
+  font-size: 14px;
+  margin: 0;
+  color: #111;
+}
+
+
+
+
 /* Problem Statements Section */
 .problem {
   margin-bottom: 40px;
@@ -274,20 +361,32 @@ nav .right a:hover {
   align-items: center;
 }
 
-.problem-details h4::before {
-  content: '';
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background-color: #0066cc;
-  border-radius: 50%;
-  margin-right: 10px;
-}
-
 .problem-details p {
   color: #555;
   line-height: 1.7;
   margin-bottom: 10px;
+}
+
+.problem-details .objectives img {
+  vertical-align: middle;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.problem-details .objectives ol {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.problem-details .objectives p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.problem-details .objectives strong {
+  color: #333;
 }
 
 /* Business Case Study Section */
@@ -314,12 +413,30 @@ nav .right a:hover {
   font-size: 1.1rem;
   color: #0066cc;
   margin-bottom: 10px;
+  position: relative;
+  padding-left: 15px;
+}
+
+.use-case h4::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #0066cc;
+  border-radius: 50%;
 }
 
 .use-case p {
   color: #555;
   line-height: 1.7;
   margin-bottom: 10px;
+}
+
+.use-case p strong {
+  color: #333;
 }
 
 /* Animation */
@@ -331,7 +448,8 @@ nav .right a:hover {
 
 .academic-details-section:hover::before,
 .problem-statements-section:hover::before,
-.Business-case-study-section:hover::before {
+.Business-case-study-section:hover::before,
+.skills_section:hover::before {
   background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
@@ -341,7 +459,8 @@ nav .right a:hover {
 @media (max-width: 768px) {
   .academic-details-section,
   .problem-statements-section,
-  .Business-case-study-section {
+  .Business-case-study-section,
+  .skills_section {
     padding: 30px 20px;
   }
   
@@ -378,6 +497,10 @@ nav .right a:hover {
   
   .use-cases-container {
     grid-template-columns: 1fr;
+  }
+  
+  .custom-shape-divider-bottom-hero svg {
+    height: 30px;
   }
 }
 
