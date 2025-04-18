@@ -175,7 +175,8 @@ nav .right a:hover {
 /* Section Styling - Common for all sections */
 .academic-details-section,
 .problem-statements-section,
-.Business-case-study-section {
+.Business-case-study-section,
+.skills_section{
   background-color: white;
   border-radius: 12px;
   padding: 40px;
@@ -187,7 +188,8 @@ nav .right a:hover {
 
 .academic-details-section::before,
 .problem-statements-section::before,
-.Business-case-study-section::before {
+.Business-case-study-section::before ,
+.skills_section::before{
   content: '';
   position: absolute;
   top: 0;
@@ -199,7 +201,8 @@ nav .right a:hover {
 
 .academic-details-section h2,
 .problem-statements-section h2,
-.Business-case-study-section h2 {
+.Business-case-study-section h2
+.skills_section h2{
   font-size: 2.5rem;
   margin-bottom: 35px;
   color: #0066cc;
@@ -209,7 +212,8 @@ nav .right a:hover {
 
 .academic-details-section h2::after,
 .problem-statements-section h2::after,
-.Business-case-study-section h2::after {
+.Business-case-study-section h2::after 
+.skills_section h2::after{
   content: '';
   position: absolute;
   left: 0;
