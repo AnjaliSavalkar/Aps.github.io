@@ -124,7 +124,7 @@ nav .right a i {
 }
 
 /* Hero Section */
-.hero-section {
+/* .hero-section {
   background: linear-gradient(135deg, var(--amazon-blue), #1e3c72);
   color: var(--white);
   min-height: 70vh;
@@ -136,7 +136,21 @@ nav .right a i {
   position: relative;
   border-radius: 0 0 20px 20px;
   overflow: hidden;
+} */
+.hero-section {
+  background: linear-gradient(135deg, #4a90e2, #5da9f0);
+  color: var(--white);
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem;
+  position: relative;
+  border-radius: 0 0 20px 20px;
+  overflow: hidden;
 }
+
 
 .content {
   max-width: 850px;
