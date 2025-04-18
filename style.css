@@ -276,12 +276,12 @@ nav .right a:hover {
   text-align: center;
 }
 
-#skills h2 {
+/* #skills h2 {
   font-size: 28px;
   margin-bottom: 20px;
   color: #232f3e;
 }
-
+ */
 .skills-row {
   display: flex; /* Align categories horizontally */
   justify-content: center; /* Center categories */
