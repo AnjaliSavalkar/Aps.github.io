@@ -631,3 +631,158 @@ footer {
     padding: 15px;
   }
 }
+
+
+
+/* ======================= */
+/* Projects Section Styling */
+/* ======================= */
+
+.projects-section {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 60px;
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.projects-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--amazon-orange), var(--primary-blue));
+  border-radius: 0 4px 4px 0;
+}
+
+.projects-section h2 {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  background-color: var(--light-gray);
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: var(--shadow-sm);
+  border-left: 4px solid var(--primary-blue);
+  transition: var(--transition);
+}
+
+.project-card:hover {
+  background-color: var(--light-blue);
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-card h3 {
+  color: var(--amazon-blue);
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.project-card p {
+  color: var(--medium-gray);
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.project-card ul {
+  margin-left: 20px;
+  margin-bottom: 10px;
+  color: var(--medium-gray);
+}
+
+.project-card ul li {
+  list-style-type: disc;
+  margin-bottom: 5px;
+}
+
+.project-card a {
+  font-weight: 500;
+  color: var(--amazon-orange);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.project-card a:hover {
+  color: var(--primary-blue);
+}
+
+
+/* ======================= */
+/* About Me Section Styling */
+/* ======================= */
+
+.about-me-section {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.about-me-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(to bottom, var(--amazon-orange), var(--primary-blue));
+  border-radius: 0 4px 4px 0;
+}
+
+.about-me-section h2 {
+  color: var(--primary-blue);
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.about-container {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: var(--medium-gray);
+}
+
+.fun-fact {
+  font-style: italic;
+  color: var(--amazon-blue);
+  font-weight: 500;
+  background-color: var(--light-blue);
+  padding: 15px 20px;
+  border-left: 4px solid var(--amazon-orange);
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+
+/* =============== */
+/* Responsive Fixes */
+/* =============== */
+
+@media (max-width: 768px) {
+  .projects-section,
+  .about-me-section {
+    padding: 30px;
+  }
+
+  .projects-container {
+    grid-template-columns: 1fr;
+  }
+}
+
