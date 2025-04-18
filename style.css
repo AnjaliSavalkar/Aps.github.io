@@ -175,8 +175,7 @@ nav .right a:hover {
 /* Section Styling - Common for all sections */
 .academic-details-section,
 .problem-statements-section,
-.Business-case-study-section,
-.skills_section{
+.Business-case-study-section {
   background-color: white;
   border-radius: 12px;
   padding: 40px;
@@ -188,8 +187,7 @@ nav .right a:hover {
 
 .academic-details-section::before,
 .problem-statements-section::before,
-.Business-case-study-section::before ,
-.skills_section::before{
+.Business-case-study-section::before {
   content: '';
   position: absolute;
   top: 0;
@@ -201,8 +199,7 @@ nav .right a:hover {
 
 .academic-details-section h2,
 .problem-statements-section h2,
-.Business-case-study-section h2,
-.skills_section h2{
+.Business-case-study-section h2 {
   font-size: 2.5rem;
   margin-bottom: 35px;
   color: #0066cc;
@@ -212,8 +209,7 @@ nav .right a:hover {
 
 .academic-details-section h2::after,
 .problem-statements-section h2::after,
-.Business-case-study-section h2::after,
-.skills_section h2::after{
+.Business-case-study-section h2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -268,66 +264,6 @@ nav .right a:hover {
   vertical-align: middle;
   max-height: 24px;
 }
-/* Skills Section Styling */
-.skills_section {
-  padding: 40px;
-  background-color: #f9f9f9;
-  font-family: 'Segoe UI', sans-serif;
-  text-align: center;
-}
-
-.skills_section h2 {
-  font-size: 28px;
-  margin-bottom: 20px;
-  color: #232f3e;
-}
-
-.skills-row {
-  display: flex; /* Align categories horizontally */
-  justify-content: center; /* Center categories */
-  gap: 30px; /* Space between categories */
-}
-
-.skill-category {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 200px;
-}
-
-.skill-category h3 {
-  font-size: 22px;
-  margin-bottom: 15px;
-  color: #37475a;
-  display:flex;
-}
-
-.skills-list {
-  display: flex; /* Display items horizontally within each category */
-  gap: 15px; /* Space between skill items */
-}
-
-.skill-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.skill-item img {
-  width: 30px;
-  height: 30px;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-
-.skill-item p {
-  font-size: 14px;
-  margin: 0;
-  color: #111;
-}
-
-
-
 
 /* Problem Statements Section */
 .problem {
@@ -448,8 +384,7 @@ nav .right a:hover {
 
 .academic-details-section:hover::before,
 .problem-statements-section:hover::before,
-.Business-case-study-section:hover::before,
-.skills_section:hover::before {
+.Business-case-study-section:hover::before {
   background: linear-gradient(45deg, #0066cc, #4dabf7, #0066cc);
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
@@ -459,8 +394,7 @@ nav .right a:hover {
 @media (max-width: 768px) {
   .academic-details-section,
   .problem-statements-section,
-  .Business-case-study-section,
-  .skills_section {
+  .Business-case-study-section {
     padding: 30px 20px;
   }
   
@@ -521,4 +455,3 @@ nav .right a:hover {
     font-size: 2.5rem;
   }
 }
-
