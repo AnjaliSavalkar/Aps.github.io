@@ -295,6 +295,7 @@ nav .right a:hover {
   font-size: 22px;
   margin-bottom: 15px;
   color: #37475a;
+  display:flex;
 }
 
 .skills-list {
