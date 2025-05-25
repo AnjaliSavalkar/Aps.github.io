@@ -5,33 +5,16 @@
   box-sizing: border-box;
 }
 
-/* :root {
-  --amazon-blue: #232f3e;
-  --amazon-orange: #ff9900;
-  --primary-blue: #0066cc;
-  --secondary-blue: #4dabf7;
-  --light-blue: #e6f4ff;
-  --dark-gray: #333;
-  --medium-gray: #555;
-  --light-gray: #f8f9fa;
-  --white: #ffffff;
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
-  --transition: all 0.3s ease;
-}
-
- */
 :root {
-  --amazon-blue: #37475A; /* Lighter amazon blue */
-  --amazon-orange: #FEBD69; /* Lighter amazon orange */
-  --primary-blue: #48A3C6; /* Lighter primary blue */
-  --secondary-blue: #89C3E9; /* Lighter secondary blue */
-  --light-blue: #F2F8FC; /* Even lighter blue for backgrounds */
+  --amazon-blue: #37475a; /* Lighter amazon blue */
+  --amazon-orange: #febd69; /* Lighter amazon orange */
+  --primary-blue: #48a3c6; /* Lighter primary blue */
+  --secondary-blue: #89c3e9; /* Lighter secondary blue */
+  --light-blue: #f2f8fc; /* Even lighter blue for backgrounds */
   --dark-gray: #555; /* Lighter dark gray */
   --medium-gray: #777; /* Lighter medium gray */
-  --light-gray: #F9FAFB; /* Slightly lighter gray */
-   --white: #ffffff;
+  --light-gray: #f9fafb; /* Slightly lighter gray */
+  --white: #ffffff;
   --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.05);
   --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.08);
   --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.1);
@@ -39,7 +22,7 @@
   /* Keep other variables the same */
 }
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 1.6;
   color: var(--dark-gray);
   max-width: 1200px;
@@ -73,13 +56,17 @@ h2 {
 }
 
 h2::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: 0;
   width: 80px;
   height: 4px;
-  background: linear-gradient(to right, var(--amazon-orange), var(--primary-blue));
+  background: linear-gradient(
+    to right,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
   border-radius: 2px;
 }
 
@@ -140,24 +127,10 @@ nav .right a i {
   font-size: 1.2rem;
 }
 
-/* Hero Section */
-/* .hero-section {
-  background: linear-gradient(135deg, var(--amazon-blue), #1e3c72);
-  color: var(--white);
-  min-height: 70vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 2rem;
-  position: relative;
-  border-radius: 0 0 20px 20px;
-  overflow: hidden;
-} */
 .hero-section {
-  background: linear-gradient(135deg,#9cc3e0, #B5D3E7);
+  background: linear-gradient(135deg, #9cc3e0, #b5d3e7);
   color: var(--white);
-  min-height: 70vh;
+  min-height: 60vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -167,7 +140,6 @@ nav .right a i {
   border-radius: 0 0 20px 20px;
   overflow: hidden;
 }
-
 
 .content {
   max-width: 850px;
@@ -192,7 +164,7 @@ nav .right a i {
 }
 
 .highlight::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 8px;
@@ -236,24 +208,6 @@ nav .right a i {
   font-size: 1.2rem;
 }
 
- 
- .custom-shape-divider-bottom-hero {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  overflow: hidden;
-  line-height: 0;
-}
-
-.custom-shape-divider-bottom-hero svg {
-  position: relative;
-  display: block;
-  width: calc(100% + 1.3px);
-  height: 70px;
-}
- 
-
 /* Section Styling - Common for all sections */
 .academic-details-section,
 .domain-section,
@@ -280,13 +234,17 @@ nav .right a i {
 .domain-section::before,
 .skills-section::before,
 .business-case-study-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 8px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--amazon-orange), var(--primary-blue));
+  background: linear-gradient(
+    to bottom,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
   border-radius: 0 4px 4px 0;
 }
 
@@ -311,7 +269,7 @@ nav .right a i {
 }
 
 .academic-details-section dt::before {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   width: 10px;
@@ -363,6 +321,10 @@ nav .right a i {
   margin-bottom: 25px;
   color: var(--amazon-blue);
   font-weight: 600;
+}
+.amazon-portfolio-intro p {
+  color: var(--medium-gray);
+  line-height: 1.7;
 }
 
 .service-item {
@@ -471,20 +433,28 @@ nav .right a i {
   font-weight: 500;
 }
 
-/* Business Case Study */
 .use-cases-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 25px;
+  display: grid; /* REQUIRED for gap to work */
+  grid-template-columns: repeat(auto-fill, minmax(750px, 1fr));
+  gap: 25px; /* Controls spacing between blocks */
+  margin: 20px 0;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
 }
 
 .use-case {
-  background-color: var(--light-gray);
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column; /* Ensures content stacks vertically */
+  gap: 20px;
   padding: 25px;
-  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
+  background-color: var(--white);
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
-  border-left: 4px solid var(--amazon-orange);
+  /* Optional border if needed
+    border-left: 4px solid var(--amazon-orange); */
 }
 
 .use-case:hover {
@@ -499,16 +469,38 @@ nav .right a i {
   padding-bottom: 10px;
   border-bottom: 1px solid rgba(0, 102, 204, 0.2);
 }
+.use-case h5 {
+  font-size: 1rem;
+  color: var(--amazon-blue);
+  font-weight: 600;
+  margin-bottom: 8px;
+  margin-top: 10px;
+}
 
 .use-case p {
   color: var(--medium-gray);
   line-height: 1.7;
-  margin-bottom: 15px;
+  margin-bottom: 10px; /* reduced from 15px */
 }
 
 .use-case p strong {
   color: var(--amazon-blue);
   font-weight: 600;
+  display: inline-block;
+  margin-bottom: 5px; /* fine control over spacing under title */
+}
+
+.use-case ul {
+  padding-left: 20px;
+  margin-top: 0; /* no gap above the list */
+  margin-bottom: 15px;
+  color: var(--medium-gray);
+  line-height: 1.7;
+}
+
+.use-case li {
+  margin-bottom: 6px; /* reduced from 10px for tighter list */
+  list-style-type: disc;
 }
 
 /* Footer */
@@ -521,16 +513,27 @@ footer {
 
 /* Animation */
 @keyframes gradientBorder {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .academic-details-section:hover::before,
 .domain-section:hover::before,
 .skills-section:hover::before,
-.business-case-study-section:hover::before {
-  background: linear-gradient(45deg, var(--amazon-orange), var(--primary-blue), var(--amazon-orange));
+.business-case-study-section:hover::before .stuff-section:hover::before {
+  background: linear-gradient(
+    45deg,
+    var(--amazon-orange),
+    var(--primary-blue),
+    var(--amazon-orange)
+  );
   background-size: 200% 200%;
   animation: gradientBorder 3s ease infinite;
 }
@@ -540,11 +543,11 @@ footer {
   .use-cases-container {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   }
-  
+
   .hero-section h1 {
     font-size: 3rem;
   }
-  
+
   .highlight {
     font-size: 3rem;
   }
@@ -554,49 +557,49 @@ footer {
   .academic-details-section,
   .domain-section,
   .skills-section,
-  .business-case-study-section {
+  .business-case-study-section .stuff-section {
     padding: 35px 25px;
   }
-  
+
   .academic-details-section dl {
     grid-template-columns: 1fr;
     gap: 10px;
   }
-  
+
   .academic-details-section dt {
     margin-top: 15px;
   }
-  
+
   nav {
     flex-direction: column;
     gap: 15px;
     padding: 15px;
   }
-  
+
   nav .right {
     width: 100%;
     justify-content: space-around;
     flex-wrap: wrap;
   }
-  
+
   .hero-section h1 {
     font-size: 2.5rem;
   }
-  
+
   .highlight {
     font-size: 2.5rem;
   }
-  
+
   .skills-container {
     grid-template-columns: 1fr;
   }
-  
+
   .service-item {
     flex-direction: column;
     align-items: center;
     text-align: center;
   }
-  
+
   .use-cases-container {
     grid-template-columns: 1fr;
   }
@@ -606,33 +609,31 @@ footer {
   .hero-section .links {
     flex-direction: column;
   }
-  
+
   .hero-section .links a {
     width: 100%;
   }
-  
+
   .hero-section h1 {
     font-size: 2rem;
   }
-  
+
   .highlight {
     font-size: 2rem;
   }
-  
+
   .skill-item {
     width: 100%;
   }
-  
+
   h2 {
     font-size: 1.8rem;
   }
-  
+
   .service-item {
     padding: 15px;
   }
 }
-
-
 
 /* ======================= */
 /* Projects Section Styling */
@@ -650,13 +651,17 @@ footer {
 }
 
 .projects-section::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 8px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--amazon-orange), var(--primary-blue));
+  background: linear-gradient(
+    to bottom,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
   border-radius: 0 4px 4px 0;
 }
 
@@ -721,12 +726,11 @@ footer {
   color: var(--primary-blue);
 }
 
-
 /* ======================= */
 /* About Me Section Styling */
 /* ======================= */
 
-.about-me-section {
+.about-me-section .stuff-section {
   background-color: var(--white);
   border-radius: 15px;
   padding: 50px;
@@ -736,18 +740,22 @@ footer {
   transition: var(--transition);
 }
 
-.about-me-section::before {
-  content: '';
+.about-me-section::before .stuff-section::before {
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
   width: 8px;
   height: 100%;
-  background: linear-gradient(to bottom, var(--amazon-orange), var(--primary-blue));
+  background: linear-gradient(
+    to bottom,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
   border-radius: 0 4px 4px 0;
 }
 
-.about-me-section h2 {
+.about-me-section h2 .stuff-section h2 {
   color: var(--primary-blue);
   font-size: 2rem;
   margin-bottom: 30px;
@@ -770,7 +778,6 @@ footer {
   margin-top: 20px;
 }
 
-
 /* =============== */
 /* Responsive Fixes */
 /* =============== */
@@ -785,4 +792,179 @@ footer {
     grid-template-columns: 1fr;
   }
 }
+.stuff-section {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 20px;
+}
 
+.stuff-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
+  border-radius: 0 4px 4px 0;
+}
+
+.stuff-section h2 {
+  color: var(--amazon-blue);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.stuff-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
+  border-radius: 2px;
+}
+
+.stuff-section .statement {
+  margin-bottom: 30px;
+  font-size: 1.05rem;
+  color: var(--medium-gray);
+  line-height: 1.8;
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.stuff-section .statement p {
+  margin-bottom: 15px;
+}
+
+.stuff-section .statement p:last-child {
+  margin-bottom: 0;
+}
+
+.stuff-section .statement strong {
+  color: var(--amazon-blue);
+  font-weight: 600;
+}
+
+.stuff-section .statement em {
+  color: var(--amazon-blue);
+  font-style: italic;
+}
+.objectives-section {
+  background-color: var(--white);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  position: relative;
+  overflow: hidden;
+  transition: var(--transition);
+  margin-bottom: 20px;
+}
+
+.objectives-section::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
+  border-radius: 0 4px 4px 0;
+}
+
+.objectives-section h2 {
+  color: var(--amazon-blue);
+  font-size: 2.2rem;
+  margin-bottom: 40px;
+  position: relative;
+  padding-bottom: 15px;
+  display: inline-block;
+}
+
+.objectives-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(
+    to right,
+    var(--amazon-orange),
+    var(--primary-blue)
+  );
+  border-radius: 2px;
+}
+
+.objectives-container {
+  background-color: var(--light-gray);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: inset 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.objective-item {
+  margin-bottom: 25px;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #eee;
+}
+
+.objective-item:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
+}
+
+.objective-item p {
+  font-size: 1.05rem;
+  color: var(--medium-gray);
+  line-height: 1.8;
+}
+
+.objective-item strong {
+  color: var(--amazon-blue);
+  font-weight: 600;
+}
+
+/* Add this to the animation section */
+.objectives-section:hover::before {
+  background: linear-gradient(
+    45deg,
+    var(--amazon-orange),
+    var(--primary-blue),
+    var(--amazon-orange)
+  );
+  background-size: 200% 200%;
+  animation: gradientBorder 3s ease infinite;
+}
+
+/* Add this to the responsive section */
+@media (max-width: 768px) {
+  .objectives-section {
+    padding: 35px 25px;
+  }
+}
