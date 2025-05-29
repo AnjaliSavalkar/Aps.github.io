@@ -1,12 +1,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#define MAXN 1000 // Adjust this according to the size of your input array
+#define MAXN 1000
 
-int A[MAXN];       // Input array
-int tree[4 * MAXN]; // Segment tree array
+int A[MAXN];
+int tree[4 * MAXN];
 
-// Build the segment tree
 void build(int node, int start, int end) {
     if (start == end) {
         tree[node] = A[start];
@@ -18,7 +17,6 @@ void build(int node, int start, int end) {
     }
 }
 
-// Update the value at index `idx` by `val`
 void update(int node, int start, int end, int idx, int val) {
     if (start == end) {
         A[idx] += val;
@@ -34,7 +32,6 @@ void update(int node, int start, int end, int idx, int val) {
     }
 }
 
-// Query the sum in the range [l, r]
 int query(int node, int start, int end, int l, int r) {
     if (r < start || end < l) {
         return 0;
@@ -48,22 +45,15 @@ int query(int node, int start, int end, int l, int r) {
     return p1 + p2;
 }
 
-// Sample usage
 int main() {
     int n;
-  scanf("%d",&n);
-
-int array[n];
-for (int i = 0; i < n; i++) {
-    scanf("%d", &array[i]);
-}
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
     build(1, 0, n - 1);
-
     printf("Sum of values in range [1, 3]: %d\n", query(1, 0, n - 1, 1, 3));
-    
-    update(1, 0, n - 1, 1, 10); // Update A[1] += 10
-
+    update(1, 0, n - 1, 1, 10);
     printf("After update, sum of values in range [1, 3]: %d\n", query(1, 0, n - 1, 1, 3));
-
     return 0;
 }
