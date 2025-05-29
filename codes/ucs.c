@@ -1,120 +1,114 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <limits.h>
 
-// Define a structure to represent the graph
-struct Edge {
-    int vertex, weight;
-    struct Edge* next;
-};
+#define MAX 100
+#define INF 1000000
 
-// Define a structure to represent the priority queue
-struct MinHeap {
-    int* vertex;
-    int* dist;
+typedef struct {
+    int node;
+    int cost;
+} Node;
+
+typedef struct {
+    Node data[MAX];
     int size;
-};
+} PriorityQueue;
 
-// Function to create a new edge
-struct Edge* newEdge(int vertex, int weight) {
-    struct Edge* edge = (struct Edge*)malloc(sizeof(struct Edge));
-    edge->vertex = vertex;
-    edge->weight = weight;
-    edge->next = NULL;
-    return edge;
+void swap(Node* a, Node* b) {
+    Node temp = *a;
+    *a = *b;
+    *b = temp;
 }
 
-// Function to create a new min heap
-struct MinHeap* createMinHeap(int size) {
-    struct MinHeap* heap = (struct MinHeap*)malloc(sizeof(struct MinHeap));
-    heap->vertex = (int*)malloc(size * sizeof(int));
-    heap->dist = (int*)malloc(size * sizeof(int));
-    heap->size = 0;
-    return heap;
-}
-
-// Function to insert a vertex into the min heap
-void insertMinHeap(struct MinHeap* heap, int vertex, int dist) {
-    heap->vertex[heap->size] = vertex;
-    heap->dist[heap->size] = dist;
-    heap->size++;
-}
-
-// Function to extract the vertex with the minimum distance
-int extractMin(struct MinHeap* heap) {
-    int min = INT_MAX, minIndex = -1;
-    for (int i = 0; i < heap->size; i++) {
-        if (heap->dist[i] < min) {
-            min = heap->dist[i];
-            minIndex = i;
-        }
-    }
-    int minVertex = heap->vertex[minIndex];
-    heap->dist[minIndex] = INT_MAX;
-    return minVertex;
-}
-
-// Function to update the distance of a vertex in the min heap
-void updateMinHeap(struct MinHeap* heap, int vertex, int dist) {
-    for (int i = 0; i < heap->size; i++) {
-        if (heap->vertex[i] == vertex) {
-            heap->dist[i] = dist;
-        }
+void push(PriorityQueue* pq, int node, int cost) {
+    pq->data[pq->size].node = node;
+    pq->data[pq->size].cost = cost;
+    int i = pq->size++;
+    while (i > 0 && pq->data[i].cost < pq->data[(i - 1) / 2].cost) {
+        swap(&pq->data[i], &pq->data[(i - 1) / 2]);
+        i = (i - 1) / 2;
     }
 }
 
-// Function to perform UCS for finding the least-cost path
-void uniformCostSearch(struct Edge* graph[], int V, int start, int end) {
-    struct MinHeap* heap = createMinHeap(V);
-    int dist[V];
-    for (int i = 0; i < V; i++) {
-        dist[i] = INT_MAX;
+Node pop(PriorityQueue* pq) {
+    Node top = pq->data[0];
+    pq->data[0] = pq->data[--pq->size];
+    int i = 0;
+    while (2 * i + 1 < pq->size) {
+        int minIndex = i;
+        int left = 2 * i + 1;
+        int right = 2 * i + 2;
+        if (left < pq->size && pq->data[left].cost < pq->data[minIndex].cost)
+            minIndex = left;
+        if (right < pq->size && pq->data[right].cost < pq->data[minIndex].cost)
+            minIndex = right;
+        if (minIndex == i) break;
+        swap(&pq->data[i], &pq->data[minIndex]);
+        i = minIndex;
+    }
+    return top;
+}
+
+int visited[MAX];
+int dist[MAX];
+int parent[MAX];
+int adj[MAX][MAX];
+
+void uniform_cost_search(int start, int goal, int n) {
+    PriorityQueue pq = { .size = 0 };
+    for (int i = 0; i < n; i++) {
+        dist[i] = INF;
+        visited[i] = 0;
+        parent[i] = -1;
     }
     dist[start] = 0;
-    insertMinHeap(heap, start, 0);
+    push(&pq, start, 0);
 
-    while (heap->size > 0) {
-        int u = extractMin(heap);
+    while (pq.size > 0) {
+        Node current = pop(&pq);
+        int u = current.node;
+        if (visited[u]) continue;
+        visited[u] = 1;
+        if (u == goal) break;
 
-        if (u == end) {
-            printf("The minimum cost from %d to %d is: %d\n", start, end, dist[end]);
-            return;
-        }
-
-        struct Edge* edge = graph[u];
-        while (edge != NULL) {
-            int v = edge->vertex;
-            int weight = edge->weight;
-
-            if (dist[u] + weight < dist[v]) {
-                dist[v] = dist[u] + weight;
-                updateMinHeap(heap, v, dist[v]);
-                insertMinHeap(heap, v, dist[v]);
+        for (int v = 0; v < n; v++) {
+            if (adj[u][v] > 0 && dist[v] > dist[u] + adj[u][v]) {
+                dist[v] = dist[u] + adj[u][v];
+                parent[v] = u;
+                push(&pq, v, dist[v]);
             }
-            edge = edge->next;
         }
     }
+
+    if (dist[goal] == INF) {
+        printf("No path found.\n");
+        return;
+    }
+
+    printf("Minimum cost from %d to %d: %d\n", start, goal, dist[goal]);
+    printf("Path: ");
+    int path[MAX], len = 0;
+    for (int v = goal; v != -1; v = parent[v])
+        path[len++] = v;
+    for (int i = len - 1; i >= 0; i--)
+        printf("%d ", path[i]);
+    printf("\n");
 }
 
 int main() {
-    int V = 5;  // Number of vertices
-    struct Edge* graph[V];
-    for (int i = 0; i < V; i++) {
-        graph[i] = NULL;
-    }
+    int n = 5;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < n; j++)
+            adj[i][j] = 0;
 
-    // Create the graph (adjacency list)
-    graph[0] = newEdge(1, 10);
-    graph[0]->next = newEdge(2, 5);
-    graph[1] = newEdge(2, 2);
-    graph[1]->next = newEdge(3, 1);
-    graph[2] = newEdge(1, 3);
-    graph[2]->next = newEdge(3, 9);
-    graph[3] = newEdge(4, 4);
-    graph[4] = newEdge(3, 6);
+    adj[0][1] = 2;
+    adj[0][2] = 4;
+    adj[1][2] = 1;
+    adj[1][3] = 7;
+    adj[2][4] = 3;
+    adj[3][4] = 1;
 
-    // Call UCS from node 0 to node 4
-    uniformCostSearch(graph, V, 0, 4);
-
+    int start = 0, goal = 4;
+    uniform_cost_search(start, goal, n);
     return 0;
 }
