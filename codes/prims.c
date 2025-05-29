@@ -4,7 +4,6 @@
 
 #define MAX 100
 
-// Structure to represent an edge
 typedef struct {
     int u, v, weight;
 } Edge;
@@ -14,7 +13,6 @@ int parent[MAX];
 int key[MAX];
 int mstSet[MAX];
 
-// Function to find the vertex with minimum key value
 int minKey(int numVertices) {
     int min = INT_MAX, minIndex;
     for (int v = 0; v < numVertices; v++) {
@@ -26,24 +24,19 @@ int minKey(int numVertices) {
     return minIndex;
 }
 
-// Prim's Algorithm to find MST
 void prim(int numVertices) {
-    // Initialize all keys as INFINITE and mstSet[] as false
     for (int i = 0; i < numVertices; i++) {
         key[i] = INT_MAX;
         mstSet[i] = 0;
     }
 
-    // Start with vertex 0
     key[0] = 0;
-    parent[0] = -1; // No parent for the starting node
+    parent[0] = -1;
 
     for (int count = 0; count < numVertices - 1; count++) {
-        // Pick the minimum key vertex from the set of vertices not yet processed
         int u = minKey(numVertices);
         mstSet[u] = 1;
 
-        // Update key value and parent index of the adjacent vertices of the picked vertex
         for (int v = 0; v < numVertices; v++) {
             if (graph[u][v] && !mstSet[v] && graph[u][v] < key[v]) {
                 parent[v] = u;
@@ -52,7 +45,6 @@ void prim(int numVertices) {
         }
     }
 
-    // Print the constructed MST
     printf("Edges in the MST:\n");
     int totalWeight = 0;
     for (int i = 1; i < numVertices; i++) {
@@ -63,11 +55,9 @@ void prim(int numVertices) {
 }
 
 int main() {
-    // Example number of warehouses (vertices)
     int numVertices = 5;
 
-    // Example graph (adjacency matrix)
-    int graph[5][5] = {
+    int inputGraph[5][5] = {
         {0, 2, 0, 6, 0},
         {2, 0, 3, 8, 5},
         {0, 3, 0, 0, 7},
@@ -75,7 +65,10 @@ int main() {
         {0, 5, 7, 9, 0}
     };
 
-    // Run Prim’s Algorithm
+    for (int i = 0; i < numVertices; i++)
+        for (int j = 0; j < numVertices; j++)
+            graph[i][j] = inputGraph[i][j];
+
     prim(numVertices);
 
     return 0;
