@@ -4,13 +4,11 @@
 
 #define ALPHABET_SIZE 26
 
-// Trie Node structure
 typedef struct TrieNode {
     struct TrieNode* children[ALPHABET_SIZE];
     int isEndOfWord;
 } TrieNode;
 
-// Function to create a new Trie node
 TrieNode* createNode() {
     TrieNode* newNode = (TrieNode*)malloc(sizeof(TrieNode));
     newNode->isEndOfWord = 0;
@@ -20,13 +18,12 @@ TrieNode* createNode() {
     return newNode;
 }
 
-// Function to insert a word into the Trie
 void insert(TrieNode* root, const char* word) {
     TrieNode* currentNode = root;
     int index;
 
     for (int i = 0; i < strlen(word); i++) {
-        index = word[i] - 'a';  // Assuming lowercase letters
+        index = word[i] - 'a';
         if (currentNode->children[index] == NULL) {
             currentNode->children[index] = createNode();
         }
@@ -35,8 +32,7 @@ void insert(TrieNode* root, const char* word) {
     currentNode->isEndOfWord = 1;
 }
 
-// Function to perform a prefix search in the Trie
-void searchPrefix(TrieNode* root, const char* prefix, char* currentPrefix, int level) {
+void searchPrefix(TrieNode* root, char* currentPrefix, int level) {
     if (root->isEndOfWord) {
         currentPrefix[level] = '\0';
         printf("%s\n", currentPrefix);
@@ -45,17 +41,16 @@ void searchPrefix(TrieNode* root, const char* prefix, char* currentPrefix, int l
     for (int i = 0; i < ALPHABET_SIZE; i++) {
         if (root->children[i] != NULL) {
             currentPrefix[level] = 'a' + i;
-            searchPrefix(root->children[i], prefix, currentPrefix, level + 1);
+            searchPrefix(root->children[i], currentPrefix, level + 1);
         }
     }
 }
 
-// Function to get all suggestions for a given prefix
 void getSuggestions(TrieNode* root, const char* prefix) {
     TrieNode* currentNode = root;
     int index;
     int length = strlen(prefix);
-    char currentPrefix[length + 1];
+    char currentPrefix[length + 100]; // extra buffer for suggestions
 
     for (int i = 0; i < length; i++) {
         index = prefix[i] - 'a';
@@ -66,11 +61,10 @@ void getSuggestions(TrieNode* root, const char* prefix) {
         currentNode = currentNode->children[index];
     }
 
-    // Call the function to get all suggestions for the current prefix
-    searchPrefix(currentNode, prefix, currentPrefix, length);
+    strcpy(currentPrefix, prefix);
+    searchPrefix(currentNode, currentPrefix, length);
 }
 
-// Main function for testing the Trie implementation
 int main() {
     TrieNode* root = createNode();
     insert(root, "apple");
