@@ -4789,13 +4789,14 @@
       <p>&copy; 2025 Anjali Savalkar. All rights reserved.</p>
     </footer>
     <script>
-      function toggleUseCase(header) {
-        const content = header.nextElementSibling;
-        const arrow = header.querySelector(".arrow");
-        const isVisible = content.style.display === "block";
-        content.style.display = isVisible ? "none" : "block";
-        arrow.textContent = isVisible ? "▸" : "▾";
-      }
+     function toggleUseCase(header) {
+  const content = header.nextElementSibling;
+  const arrow = header.querySelector(".arrow");
+  const isVisible = window.getComputedStyle(content).display === "block";
+  content.style.display = isVisible ? "none" : "block";
+  arrow.textContent = isVisible ? "▸" : "▾";
+}
+
     </script>
   </body>
 </html>
