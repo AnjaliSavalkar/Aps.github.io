@@ -456,10 +456,48 @@ nav .right a i {
   /* Optional border if needed
     border-left: 4px solid var(--amazon-orange); */
 }
-
+.use-case {
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+.use-case-header {
+  cursor: pointer;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+}
+.arrow {
+  font-size: 24px;
+  margin-right: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+.use-case-content {
+  display: none;
+  margin-top: 10px;
+}
+.rotated {
+  transform: rotate(90deg);
+}
 .use-case:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+.use-case {
+  margin-bottom: 30px;
+  border: 1px solid #ccc;
+  padding: 15px;
+  border-radius: 8px;
+}
+.use-case h4 {
+  cursor: pointer;
+  color: #0077cc;
+}
+.use-case-content {
+  display: none;
+  margin-top: 10px;
 }
 
 .use-case h4 {
@@ -665,11 +703,11 @@ footer {
   border-radius: 0 4px 4px 0;
 }
 
-.projects-section h2 {
+/* .projects-section h2 {
   color: var(--primary-blue);
   font-size: 2rem;
   margin-bottom: 30px;
-}
+} */
 
 .projects-container {
   display: grid;
