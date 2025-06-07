@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Amazon Use Cases and Algorithms: A Comprehensive Analysis</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      h2 {
+        margin-top: 40px;
+        color: #2a4d69;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-bottom: 40px;
+      }
+      th,
+      td {
+        border: 1px solid #999;
+        padding: 8px 12px;
+        text-align: left;
+        vertical-align: top;
+      }
+      th {
+        background-color: #4a90e2;
+        color: white;
+      }
+      td {
+        background-color: #f9f9f9;
+      }
+      /* For multiline content in cells */
+      td br {
+        line-height: 1.4;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Amazon Use Cases and Algorithms: A Comprehensive Analysis</h1>
+
+    <h2>Amazon E-commerce Algorithms</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Algorithm</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1.1 Product Search Optimization</td>
+          <td>B-Tree</td>
+          <td>Search: O(log n)<br />Insert: O(log n)<br />Delete: O(log n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>1.2 Autocomplete Search</td>
+          <td>Trie (Prefix Tree)</td>
+          <td>Insert: O(k)<br />Search: O(k)</td>
+          <td>O(ALPHABET_SIZE × N × M)*</td>
+        </tr>
+        <tr>
+          <td>1.3 Product Search Ranking</td>
+          <td>Tim Sort</td>
+          <td>Best: O(n)<br />Average/Worst: O(n log n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>1.4 Visual Search Recommendations</td>
+          <td>KD-Tree</td>
+          <td>
+            Construction: O(n log n)<br />Average Search: O(log n)<br />Worst
+            Search: O(n)
+          </td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>1.5 Influence-Based Ranking</td>
+          <td>PageRank</td>
+          <td>Per Iteration: O(N + E)<br />Total: O((N + E) × I)**</td>
+          <td>O(N + E)</td>
+        </tr>
+        <tr>
+          <td>1.6 Customer Clustering</td>
+          <td>Union-Find</td>
+          <td>Find: O(α(n))<br />Union: O(α(n))***</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>1.7 Range Query Analysis</td>
+          <td>Mo's Algorithm</td>
+          <td>Per Query: O(√N) amortized<br />Total: O((N + Q) × √N)</td>
+          <td>O(N + M)****</td>
+        </tr>
+        <tr>
+          <td>1.8 Order Fulfillment Priority</td>
+          <td>Priority Queue (Min-Heap)</td>
+          <td>
+            Insert: O(log n)<br />Extract: O(log n)<br />Update: O(log n)<br />Batch:
+            O(n log n)
+          </td>
+          <td>Insert: O(1)<br />Total: O(n)</td>
+        </tr>
+        <tr>
+          <td>1.9 Smart Shopping Cart</td>
+          <td>Stack-Based Command Pattern</td>
+          <td>
+            Execute: O(1)<br />Undo/Redo: O(1)<br />Snapshot: O(n)<br />Cleanup:
+            O(k)
+          </td>
+          <td>Execute: O(1)<br />Snapshot: O(n)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Amazon Warehouse & Logistics Algorithms</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Algorithm</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>2.1 Inventory Management</td>
+          <td>0/1 Knapsack</td>
+          <td>O(N × W)</td>
+          <td>O(N × W), optimized to O(W)</td>
+        </tr>
+        <tr>
+          <td>2.2 Warehouse Network Design</td>
+          <td>Kruskal's Algorithm</td>
+          <td>O(E log E)</td>
+          <td>O(V + E)</td>
+        </tr>
+        <tr>
+          <td>2.2 Warehouse Network Design</td>
+          <td>Prim's Algorithm</td>
+          <td>O(E + V log V)</td>
+          <td>O(V + E)</td>
+        </tr>
+        <tr>
+          <td>2.3 Warehouse Robot Navigation</td>
+          <td>Uniform Cost Search (UCS)</td>
+          <td>O(b^(d+1))</td>
+          <td>O(b^(d+1))</td>
+        </tr>
+        <tr>
+          <td>2.4 Driver-Warehouse Matching</td>
+          <td>Gale-Shapley Stable Matching</td>
+          <td>O(n²)</td>
+          <td>O(n + m)</td>
+        </tr>
+        <tr>
+          <td>2.5 Delivery Route Optimization</td>
+          <td>A* Algorithm</td>
+          <td>O(b^d)</td>
+          <td>O(V)</td>
+        </tr>
+        <tr>
+          <td>2.6 Smart Aerial Logistics Optimization System</td>
+          <td>A* Algorithm</td>
+          <td>O(b^d)</td>
+          <td>O(V)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Amazon Pay & Security Use Case</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Algorithm</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>3.1 Secure Payment Encryption</td>
+          <td>RSA with FLT Optimization</td>
+          <td>O(n³)</td>
+          <td>O(n)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>AWS Cloud Infrastructure Algorithms</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Algorithm</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>4.1 Dynamic Resource Load Detection</td>
+          <td>2D Kadane's Algorithm</td>
+          <td>O(n³)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>4.2 Efficient Resource Usage Monitoring</td>
+          <td>Square Root Decomposition</td>
+          <td>Preprocessing: O(n)<br />Query: O(√n)<br />Update: O(√n)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>4.3 VPC Network Traffic Routing</td>
+          <td>Bellman-Ford Algorithm</td>
+          <td>Best: O(E)<br />Average/Worst: O(V × E)</td>
+          <td>O(V)</td>
+        </tr>
+        <tr>
+          <td>4.4 Traffic Distribution for High Availability</td>
+          <td>Weighted Round Robin (WRR)</td>
+          <td>O(1) per request</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>4.5 Content Delivery Network Optimization</td>
+          <td>Dijkstra's Shortest Path</td>
+          <td>O((V + E) log V)</td>
+          <td>O(V + E)</td>
+        </tr>
+        <tr>
+          <td>4.6 Priority-Based Email Scheduling</td>
+          <td>Heap-Based Priority Queue</td>
+          <td>Insert: O(log n)<br />Extract: O(log n)</td>
+          <td>O(n)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Amazon Prime Video Algorithms</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Use Case</th>
+          <th>Algorithm</th>
+          <th>Time Complexity</th>
+          <th>Space Complexity</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5.1 Metadata Storage and Retrieval</td>
+          <td>Hash Map</td>
+          <td>Insert/Update: O(1)<br />Lookup: O(1)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>5.2 Video Chunking for Scalable Streaming</td>
+          <td>Sliding Window / Fixed-Size Chunking</td>
+          <td>
+            Segment Extraction: O(n)<br />Parallel Processing: O(1) per segment
+          </td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>5.3 Video Segment Scheduling</td>
+          <td>FIFO Queue</td>
+          <td>Enqueue: O(1)<br />Dequeue: O(1)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>5.4 Max-Flow Optimization</td>
+          <td>Ford-Fulkerson</td>
+          <td>O(E × f)</td>
+          <td>O(V + E)</td>
+        </tr>
+        <tr>
+          <td>5.5 Content Delivery & Edge Caching</td>
+          <td>LRU Cache</td>
+          <td>Get: O(1)<br />Put: O(1)<br />Eviction: O(1)</td>
+          <td>O(n)</td>
+        </tr>
+        <tr>
+          <td>5.6 Fast Title/Description Search</td>
+          <td>KMP (Knuth-Morris-Pratt)</td>
+          <td>O(N + M)</td>
+          <td>O(M)</td>
+        </tr>
+        <tr>
+          <td>5.7 Viewing Progress Tracking</td>
+          <td>Persistent Segment Tree</td>
+          <td>Update: O(log n)<br />Query: O(log n)</td>
+          <td>O(n log n)</td>
+        </tr>
+        <tr>
+          <td>5.8 Range Query Optimization</td>
+          <td>Segment Tree</td>
+          <td>Query: O(log N)<br />Update: O(log N)<br />Build: O(N)</td>
+          <td>O(4N)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>Legend & Complexity Variables</h2>
+    <ul>
+      <li><b>k</b> = length of word/prefix</li>
+      <li><b>N</b> = number of nodes, <b>M</b> = maximum word length</li>
+      <li><b>I</b> = number of iterations for convergence</li>
+      <li><b>α(n)</b> = inverse Ackermann function (nearly constant)</li>
+      <li><b>E</b> = number of edges, <b>V</b> = number of vertices</li>
+      <li><b>W</b> = capacity limit (warehouse space)</li>
+      <li><b>b</b> = branching factor, <b>d</b> = search depth</li>
+      <li><b>f</b> = maximum flow value</li>
+      <li><b>Q</b> = number of queries</li>
+    </ul>
+
+    <h2>Design Principles Summary</h2>
+    <ul>
+      <li>
+        <b>Divide and Conquer</b>: B-Tree, Tim Sort, KD-Tree, Mo's Algorithm,
+        Segment Tree
+      </li>
+      <li><b>Dynamic Programming</b>: 0/1 Knapsack, 2D Kadane's Algorithm</li>
+      <li><b>Greedy Algorithms</b>: Kruskal's, Prim's, PageRank</li>
+      <li><b>Graph Algorithms</b>: PageRank, A*, Bellman-Ford, UCS</li>
+      <li>
+        <b>Tree Structures</b>: B-Tree, Trie, KD-Tree, Segment Tree, Persistent
+        Segment Tree
+      </li>
+      <li><b>Hashing & Caching</b>: LRU Cache, Union-Find</li>
+      <li><b>Pattern Matching</b>: KMP Algorithm</li>
+      <li><b>State Management</b>: Command Pattern (Shopping Cart)</li>
+      <li><b>Network Flow</b>: Ford-Fulkerson Algorithm</li>
+      <li><b>String Processing</b>: Square Root Decomposition</li>
+    </ul>
+  </body>
+</html>
