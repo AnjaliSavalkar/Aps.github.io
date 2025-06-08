@@ -20,7 +20,7 @@
       referrerpolicy="no-referrer"
     />
 
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
     <!-- NAVBAR -->
@@ -1721,3 +1721,3081 @@
                   height: auto;
                   display: block;
                   margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 18: 0/1 Knapsack Algorithm Visulization[18]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              Amazon distributes 500 products across 3 warehouses with limited
+              space. For each warehouse, the 0/1 Knapsack algorithm selects
+              products to maximize value (demand × profit) while staying within
+              storage limits.
+            </p>
+            <p>
+              Example: The North warehouse has 1,000 cubic meters capacity. The
+              algorithm picks high-demand, space-efficient items like
+              smartphones and jackets, excluding bulky, low-demand products to
+              optimize inventory and reduce delivery times.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                Time Complexity: O(N × W), where N is number of products and W
+                is warehouse capacity
+              </li>
+              <li>
+                Space Complexity: O(N × W), can be optimized to O(W) using a 1D
+                array
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Reduces holding costs and stockouts</li>
+              <li>
+                Improves fulfillment efficiency by prioritizing high-demand
+                products
+              </li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/knapsack.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View 0/1 Knapsack Code on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            2.2 Optimization of Warehouse and Fulfillment Center Network
+          </div>
+          <div class="use-case-content">
+            <p>
+              Amazon’s vast fulfillment center network requires efficient
+              interconnections to minimize transportation costs and delivery
+              times. By designing an optimized logistics network that adapts to
+              demand fluctuations and real-world conditions, Amazon reduces
+              expenses, improves delivery speed, and ensures scalable,
+              cost-effective operations.
+            </p>
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Changing demand regions may require dynamic MST adjustments
+              </li>
+              <li>Complex edge weights due to terrain and traffic factors</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="system-design/mst.jpg"
+                alt="Minimum Spanning Tree Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 19: Workflow for Optimization of Warehouse and
+                Fulfillment Center Networks
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: Kruskal’s</h5>
+
+            <p>
+              A greedy method that sorts all edges by weight and adds the
+              smallest edge to the MST if it does not create a cycle, using
+              Union-Find to detect cycles.
+            </p>
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Greedy selection of smallest edges</li>
+              <li>Cycle detection with Union-Find</li>
+              <li>Connects disjoint sets to build MST</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/kruskals.gif"
+                alt="Kruskal's Algorithm in Action"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 20: Kruskal's Algorithm Visulization[19]
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: Prim’s</h5>
+            <p>
+              Starts from a source node and grows the MST by repeatedly adding
+              the smallest edge connecting the tree to a new vertex, typically
+              implemented with a priority queue.
+            </p>
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Greedy expansion from a starting node</li>
+              <li>Priority queue for efficient edge selection</li>
+              <li>Grows MST by connecting closest vertices</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/prims.gif"
+                alt="Prim's Algorithm in Action"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 21: Prims Algorithm Visulization
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage :</h5>
+            <p>
+              Amazon plans to open 10 new fulfillment centers connected by
+              routes with varying costs. Using
+              <strong>Kruskal’s Algorithm</strong>, routes are sorted by cost to
+              connect all centers with minimal total expense, avoiding loops.
+              <strong>Prim’s Algorithm</strong> starts from a key hub and
+              expands by linking the nearest centers, ideal for phased growth.
+            </p>
+            <p>
+              <strong>Example:</strong> If routes between centers A-B, A-C, and
+              B-C cost $5, $10, and $7 respectively, Kruskal’s algorithm picks
+              A-B and B-C for a total cost of $12, avoiding the costly A-C
+              route.
+            </p>
+            <h5>ALgorithm performance Analysis</h5>
+            <div
+              style="display: flex; justify-content: center; margin-top: 20px"
+            >
+              <table
+                border="1"
+                cellpadding="10"
+                cellspacing="0"
+                style="border-collapse: collapse; text-align: center"
+              >
+                <thead>
+                  <tr>
+                    <th>Aspect</th>
+                    <th>Kruskal’s Algorithm</th>
+                    <th>Prim’s Algorithm</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Time Complexity</td>
+                    <td>O(E log E)</td>
+                    <td>O(E + V log V)</td>
+                  </tr>
+                  <tr>
+                    <td>Space Complexity</td>
+                    <td>O(V + E)</td>
+                    <td>O(V + E)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Reduces inter-warehouse transportation cost</li>
+              <li>Boosts delivery speed through efficient route planning</li>
+              <li>Builds scalable and cost-effective logistics networks</li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/kruskal.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Kruskal's Code Here</a
+            >
+            <br />
+            <!-- Prim's Algorithm -->
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/prims.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Prim's Code Here</a
+            >
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            2.3 Warehouse Robot Navigation
+          </div>
+          <div class="use-case-content">
+            <p>
+              Amazon’s robotic fulfillment centers deploy autonomous robots to
+              transport items between storage shelves and packing stations. The
+              warehouse floor is divided into cells, each with varying movement
+              costs depending on factors such as aisle width, floor conditions,
+              or congestion. Unlike traditional shortest path algorithms, the
+              goal is to find the path that minimizes total energy consumption
+              or movement cost rather than just distance.
+            </p>
+            <!-- <img
+              src="system-design/segment.jpg"
+              alt="A* Algorithm Visualization"
+              width="600"
+              height="400"
+            /> -->
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Variable movement costs per cell (energy cost differences)
+              </li>
+              <li>No reliable heuristics for real-time path costs</li>
+              <li>Finding energy-efficient (least-cost) routes</li>
+              <li>Scalability for many robots navigating simultaneously</li>
+            </ul>
+
+            <h5>Algorithm: Uniform Cost Search (UCS)</h5>
+            <p>
+              Uniform Cost Search (UCS) is a graph traversal algorithm that
+              expands the least-cost node first. It uses a priority queue to
+              explore paths based on cumulative path cost, ensuring an optimal
+              solution when all step costs are non-negative.
+            </p>
+
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Expands paths with the lowest cumulative cost first</li>
+              <li>Uses a priority queue for efficient node selection</li>
+              <li>Guarantees optimal path if all costs are non-negative</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/ucs.gif"
+                alt="Uniform Cost Search Animation"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 22: Uniform Cost Search Algorithm Visulization[20]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              In an Amazon warehouse, robots navigate aisles with different
+              movement costs — for example, narrow aisles require more energy to
+              maneuver than wide ones. Using
+              <strong>Uniform Cost Search (UCS)</strong>, robots find the least
+              energy-consuming path rather than just the shortest distance.
+            </p>
+            <p>
+              <strong>Example:</strong> Suppose a robot must move from point A
+              to D. The direct path A→D is shortest but passes through a narrow
+              aisle costing 5 energy units. An alternative path A→B→C→D is
+              longer but costs only 2 energy units per segment. UCS chooses the
+              longer but less costly route to save battery life and improve
+              efficiency.
+            </p>
+
+            <!-- Analysis Section -->
+
+            <h5>Uniform Cost Search: Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                <strong>Time Complexity:</strong> O(b<sup>1 + C*/ε</sup>),
+                where:
+                <ul>
+                  <li><code>b</code> = branching factor</li>
+                  <li><code>C*</code> = cost of the optimal solution</li>
+                  <li><code>ε</code> = minimum positive edge cost</li>
+                </ul>
+                UCS explores all nodes with cumulative path cost ≤ C*, which
+                leads to exponential growth.
+              </li>
+              <li>
+                <strong>Space Complexity:</strong> O(b<sup>1 + C*/ε</sup>),
+                because it keeps all generated nodes in memory (open and closed
+                lists).
+              </li>
+              <li>
+                <strong>Optimality:</strong> Guaranteed (if costs are
+                non-negative).
+              </li>
+              <li>
+                <strong>Completeness:</strong> Yes, if the branching factor is
+                finite and step costs are ≥ ε > 0.
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Saves energy and extends robot battery life</li>
+              <li>Speeds up order fulfillment with efficient routing</li>
+              <li>Reduces robot wear and tear</li>
+              <li>Supports scaling robotic fleets efficiently</li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/ucs.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View UCS Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            2.4 Stable Driver–Warehouse Matching During Prime Day
+          </div>
+          <div class="use-case-content">
+            <p>
+              During major sales events like Prime Day, Amazon must efficiently
+              match thousands of delivery drivers to dozens of warehouses. Each
+              driver has preferences (e.g., closer locations, preferred shift
+              times), while warehouses prioritize drivers based on factors like
+              availability and experience.
+            </p>
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Managing large-scale driver–warehouse assignments in real time
+              </li>
+              <li>Ensuring fair and mutually beneficial matches</li>
+              <li>Producing results quickly to prevent delivery delays</li>
+            </ul>
+
+            <h5>Algorithm: Gale-Shapley Stable Matching Algorithm</h5>
+            <p>
+              The Gale–Shapley algorithm assigns drivers to warehouses based on
+              mutual preferences. Drivers sequentially propose to their most
+              preferred warehouse. Warehouses tentatively accept the most
+              suitable offer (based on their preferences) while rejecting
+              others. This continues until all drivers are matched, ensuring no
+              unmatched pair would prefer each other over their current match.
+            </p>
+
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Drivers propose based on ranked preferences</li>
+              <li>
+                Warehouses accept best-fit offers (tentative until better comes)
+              </li>
+              <li>Stable matches ensure no driver-warehouse would swap</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/stable marriage.gif"
+                alt="Stable Marriage Algorithm Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 23: Gale-Shapley Stable Matching Algorithm
+                Visulization[21]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage :</h5>
+            <p>
+              During Prime Day, Amazon needs to assign drivers to warehouses
+              efficiently. Suppose there are 5 drivers and 5 warehouses, each
+              with their own ranked preferences based on factors like distance,
+              shift times, availability, and experience.
+            </p>
+            <p>
+              Using the <strong>Gale-Shapley algorithm</strong>, drivers propose
+              to their preferred warehouses in order. Warehouses tentatively
+              accept the best proposals based on their preferences, rejecting
+              less preferred offers. This process continues until all drivers
+              and warehouses are matched in a way that no pair would prefer
+              switching partners.
+            </p>
+            <p>
+              For example, Driver D1 prefers Warehouse W3 first, but if W3
+              prefers another driver D2 more, W3 will tentatively reject D1’s
+              proposal and wait for a better match, ensuring stable assignments
+              that optimize satisfaction and reduce reassignments during busy
+              times.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>Time Complexity: O(n²) for n drivers and warehouses</li>
+              <li>Space Complexity: O(n + m) for storing preferences</li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>
+                Minimizes reassignments and confusion during high-demand periods
+              </li>
+              <li>Improves driver satisfaction through fair matching</li>
+              <li>Enables faster, more reliable deliveries</li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/gale_shapely.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Code on GitHub</a
+            >
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            2.5 Delivery Route Planning
+          </div>
+          <div class="use-case-content">
+            <p>
+              Amazon uses intelligent route planning systems to optimize
+              last-mile delivery through autonomous ground robots like Scout and
+              other delivery vehicles. These systems must handle dynamic city
+              environments and unpredictable real-time conditions while ensuring
+              timely deliveries.
+            </p>
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Real-time rerouting due to traffic congestion, roadblocks, or
+                construction
+              </li>
+              <li>
+                Managing route constraints such as one-way streets and temporary
+                detours
+              </li>
+              <li>
+                Optimizing routes based on energy constraints, load weight, and
+                deadlines
+              </li>
+            </ul>
+
+            <figure style="text-align: center">
+              <img
+                src="system-design/Astar1.jpg"
+                alt="A* Algorithm Visualization"
+                style="
+                  width: 30%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 24: Delivery Route Planning Workflow
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: A* Tree</h5>
+            <p>
+              A* finds the shortest path in a weighted graph by combining the
+              actual cost from the start and a heuristic estimate to the goal.
+            </p>
+            <p><strong>f(n) = g(n) + h(n)</strong>, where:</p>
+            <ul>
+              <li><strong>g(n)</strong> = cost from start to current node</li>
+              <li><strong>h(n)</strong> = heuristic estimate to goal</li>
+            </ul>
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Heuristic Guidance: Prioritizes nodes nearer to the goal.</li>
+              <li>
+                Optimality: Guarantees shortest path with admissible heuristic.
+              </li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/AstarExampleEn.gif"
+                alt="A* Algorithm Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 25: Visualization of the A* Pathfinding Algorithm[22]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage:</h5>
+            <p>
+              In last-mile delivery operations, A* helps Scout robots and
+              delivery vehicles efficiently plan and adapt routes across urban
+              grids and residential zones.
+            </p>
+            <p>
+              <strong>Example:</strong> A delivery robot handling five orders in
+              a neighborhood might face:
+            </p>
+            <ul>
+              <li>
+                Road closures or construction blocking access to certain streets
+              </li>
+              <li>
+                Energy constraints requiring the most power-efficient route
+              </li>
+              <li>
+                Temporary loss of GPS signal; fallback paths are estimated using
+                historical delivery data
+              </li>
+              <li>
+                The robot instantly recalculates the path using A*, ensuring
+                minimal delay
+              </li>
+            </ul>
+
+            <h5>Real-Time Heuristics Considered:</h5>
+            <ul>
+              <li>
+                <strong>Traffic Time Estimate:</strong> Adjusts path cost based
+                on congestion data
+              </li>
+              <li>
+                <strong>Energy Efficiency:</strong> Avoids steep paths or longer
+                detours to conserve power
+              </li>
+              <li>
+                <strong>Delivery Deadlines:</strong> Prioritizes deliveries
+                nearing SLA time limits
+              </li>
+            </ul>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                Time Complexity: O(b<sup>d</sup>), where b is branching factor
+                and d is depth; can be high in 3D space
+              </li>
+              <li>
+                Space Complexity: O(V), where V is number of nodes or grid
+                points
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>
+                Faster and more reliable deliveries with optimized route
+                computation
+              </li>
+              <li>
+                Reduced operational costs by minimizing travel time and distance
+              </li>
+              <li>
+                Improved customer satisfaction through consistent on-time
+                performance
+              </li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/A*tree.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View A* Code on GitHub</a
+            >
+          </div>
+        </div>
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            2.6 Smart Aerial Logistics Optimization System(Amazon Prime Air –
+            Drone Delivery)
+          </div>
+          <div class="use-case-content">
+            <p>
+              A drone-based delivery system designed to deliver packages in
+              under 30 minutes using AI-powered autonomous drones. The system
+              dynamically plans flight routes, avoids obstacles, and optimizes
+              for time and energy usage.
+            </p>
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Real-time route planning avoiding no-fly zones and obstacles
+              </li>
+              <li>Battery-efficient path optimization</li>
+              <li>Dynamic route recalculation due to changing conditions</li>
+            </ul>
+
+            <h5>Algorithm :A* tree</h5>
+            <p>
+              The A* algorithm is a popular pathfinding and graph traversal
+              algorithm that finds the shortest path between nodes in a weighted
+              graph. It combines features of Dijkstra's algorithm and Greedy
+              Best-First Search by using both the actual cost from the start
+              node and an estimated cost to the goal to guide the search
+              efficiently.
+            </p>
+
+            <p>It uses a cost function:</p>
+            <p><strong>f(n) = g(n) + h(n)</strong>, where:</p>
+            <ul>
+              <li>
+                <strong>g(n)</strong> = actual cost from the start node to the
+                current node
+              </li>
+              <li>
+                <strong>h(n)</strong> = heuristic estimated cost from the
+                current node to the goal
+              </li>
+            </ul>
+            <!-- <img
+              src="system-design/segment.jpg"
+              alt="A* Algorithm Visualization"
+              width="600"
+              height="400"
+            /> -->
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Heuristic Guidance: Prioritizes nodes closer to the goal.</li>
+              <li>
+                Optimality: Ensures shortest path with an admissible heuristic.
+              </li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/AstarExampleEn.gif"
+                alt="A* Algorithm Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 26: Animated Visualization of the A* Pathfinding[22]
+                Algorithm
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example with Heuristics</h5>
+            <p><strong>Scenario:</strong></p>
+            <ul>
+              <li>
+                An Amazon Prime Air drone must deliver a package 10 km away in a
+                city.
+              </li>
+              <li>During the flight, it faces no-fly zones near hospitals.</li>
+              <li>Sudden wind changes occur.</li>
+              <li>Low battery triggers route optimization.</li>
+              <li>Unexpected obstacles like cranes appear.</li>
+            </ul>
+
+            <p><strong>How A* Helps:</strong></p>
+            <ul>
+              <li>
+                Models the 3D airspace as a grid graph (latitude, longitude,
+                altitude).
+              </li>
+              <li>
+                Uses Euclidean distance as the heuristic to estimate
+                straight-line distance to the goal.
+              </li>
+              <li>
+                Adds environmental penalties in the heuristic for obstacles or
+                weather conditions to avoid risky paths.
+              </li>
+              <li>
+                Dynamically recalculates the route to avoid no-fly zones and
+                conserve battery.
+              </li>
+            </ul>
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                Time Complexity: O(b<sup>d</sup>), where b is branching factor
+                and d is depth; can be high in 3D space
+              </li>
+              <li>
+                Space Complexity: O(V), where V is number of nodes or grid
+                points
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Ultra-fast, reliable delivery</li>
+              <li>Reduced last-mile delivery costs</li>
+              <li>Access to remote and urban areas with complex navigation</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/A*tree.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View A* Code on GitHub</a
+            >
+          </div>
+        </div>
+
+        <h3>3. Amazon Pay & Security Use Case</h3>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            3.1 Secure Payment Encryption (Amazon Pay)
+          </div>
+          <div class="use-case-content">
+            <p>
+              <strong>Problem:</strong> Encrypting customer card information
+              quickly and securely during high-volume events like Prime Day.
+            </p>
+            <p>
+              <strong>How FLT Helps:</strong> Fermat's Little Theorem optimizes
+              modular arithmetic used in encryption algorithms like RSA, making
+              encryption and decryption faster.
+            </p>
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Handling high-volume transactions efficiently</li>
+              <li>Balancing encryption speed and security</li>
+              <li>Real-time encryption without delays</li>
+            </ul>
+
+            <h5>Algorithm: RSA (with FLT Optimization)</h5>
+
+            <p>
+              RSA is a public-key encryption method using a public-private key
+              pair. Fermat’s Little Theorem (FLT) speeds up modular inverse
+              calculations during key generation and decryption.
+            </p>
+
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Use large primes to generate public-private key pairs</li>
+              <li>Apply Fermat’s Little Theorem for fast modular inverse</li>
+              <li>Encrypt with public key, decrypt with private key</li>
+            </ul>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              During Prime Day, thousands of customers make purchases
+              simultaneously. To protect sensitive card information, Amazon Pay
+              encrypts the AES session key using RSA with Fermat’s Little
+              Theorem optimization. For example, when a customer completes a
+              transaction, RSA quickly encrypts the session key so only Amazon’s
+              secure servers can decrypt it. This speeds up encryption and
+              decryption, ensuring secure payments without slowing checkout
+              during peak traffic.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                Time Complexity: O(n³), improved in practice with FLT
+                optimization
+              </li>
+              <li>Space Complexity: O(n) for key storage</li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>
+                Faster, secure transactions during peak loads (e.g., Prime Day)
+              </li>
+              <li>Scalable encryption handling large transaction volumes</li>
+              <li>Enhanced customer trust through strong data protection</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/flt.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View FLT Code on GitHub</a
+            >
+
+            <!-- <img
+              src="https://media.giphy.com/media/ToMjGpS8DH4LEYhQ3qU/giphy.gif"
+              alt="A* Algorithm Visualization"
+              width="600"
+              height="400"
+            /> -->
+          </div>
+        </div>
+        <h3>4. AWS use cases</h3>
+        <figure style="text-align: center">
+          <img
+            src="system-design/aws.jpg"
+            width="100%"
+            height="650px"
+            style="border: none"
+            alt="AWS Architecture Diagram for Amazon Systems"
+          />
+          <figcaption style="margin-top: 8px; font-style: italic; color: #555">
+            Figure 27: AWS System Design Architecture [7]
+          </figcaption>
+        </figure>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.1 Dynamic Resource Load Detection Using AWS CloudWatch
+          </div>
+          <div class="use-case-content">
+            <p>
+              Analyzing CPU, memory, and I/O usage patterns across EC2 instances
+              and time windows to detect sustained high-load zones in near
+              real-time using AWS CloudWatch metrics .
+            </p>
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Detecting real-time high-load zones (spikes) efficiently</li>
+              <li>Processing large 2D data matrices continuously</li>
+              <li>Scalability for monitoring multiple servers over time</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="system-design/2d.jpg"
+                alt="2D Visualization"
+                style="
+                  width: 30%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 28: Workflow for Dynamic Resource Load Detection Using
+                AWS CloudWatch
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: 2D Kadane</h5>
+            <p>
+              Modified 2D Kadane's Algorithm identifies submatrices where
+              resource usage consistently exceeds dynamic thresholds. Unlike
+              standard maximum sum detection, this variant focuses on sustained
+              load patterns above baseline performance metrics.
+            </p>
+            <h5>Design Principles:</h5>
+            <ul>
+              <li>Compress columns into 1D row sums</li>
+              <li>Apply Kadane’s Algorithm on row sums</li>
+              <li>Scan all column pairs for best submatrix</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/2dkadane.gif"
+                alt="2D Kadane's Algorithm Animation"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 29: 2D_Kadane Algorithm Visulization
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              <strong>Scenario:</strong> E-commerce platform monitoring 500 EC2
+              instances during Black Friday traffic surge. CloudWatch collects
+              CPU/memory metrics every 30 seconds, creating a 500×2880 matrix
+              (instances × 24-hour periods).
+            </p>
+
+            <p>
+              <strong>Algorithm Application:</strong> The enhanced 2D Kadane
+              detects a critical submatrix: 25 instances experiencing 85%+ CPU
+              utilization for 12+ consecutive minutes in the checkout
+              microservice cluster. This pattern indicates impending service
+              degradation requiring immediate scaling.
+            </p>
+
+            <p>
+              <strong>Automated Response:</strong> Upon detection, the system
+              triggers: AWS Auto Scaling Group expansion, CloudWatch alarm
+              escalation, and load balancer traffic redistribution - preventing
+              customer-facing outages before they occur.
+            </p>
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>Time Complexity: O(n³) for n×n matrices</li>
+              <li>Space Complexity: O(n)</li>
+            </ul>
+
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Faster anomaly detection enabling smart autoscaling</li>
+              <li>Improved service reliability and reduced downtime</li>
+              <li>Operational cost savings through efficient resource use</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/2D_Kadane.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View 2D_Kadane Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.2 Efficient Resource Usage Monitoring in AWS Cloud
+          </div>
+          <div class="use-case-content">
+            <p>
+              AWS CloudWatch processes millions of metric queries daily for
+              dashboards, alerting, and operational analytics. Enterprise
+              customers frequently query resource usage patterns across custom
+              time ranges (last 6 hours, peak traffic windows, incident
+              timeframes) requiring sub-second response times for real-time
+              operational decision making.
+            </p>
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Frequent interval-based queries with low latency</li>
+              <li>
+                Handling high-frequency data from thousands of sources
+                efficiently
+              </li>
+            </ul>
+
+            <figure style="text-align: center">
+              <img
+                src="system-design/square.jpg"
+                alt="Square Visualization"
+                style="
+                  width: 30%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 30: Workflow for Resource Usage Monitoring in AWS Cloud
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: Square Root Decomposition</h5>
+            <p>
+              Square Root Decomposition is a technique that divides an array
+              into √n-sized blocks to speed up range queries and updates.
+              Instead of scanning the full range, it combines block-level
+              precomputed values with partial sums for fast results.
+            </p>
+
+            <p>Design principle</p>
+            <ul>
+              <li>Divide array of size n into √n blocks</li>
+              <li>Precompute aggregates per block</li>
+              <li>Use partial + block sums for range queries</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/squareroot-decomposition.png"
+                alt="Square Root Decomposition Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 31: Square Root Decomposition Algorithm[23]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              <strong>Scenario:</strong> Netflix's AWS infrastructure team needs
+              to analyze CPU utilization patterns across 5,000 EC2 instances
+              during a global streaming event. They query multiple custom time
+              ranges: "2-4 PM peak hours," "incident window 3:15-3:45 PM," and
+              "recovery period 4:00-5:00 PM."
+            </p>
+
+            <p>
+              <strong>Traditional Approach:</strong> Scanning millions of
+              individual metric points would require 15-30 seconds per query,
+              making real-time analysis impossible during critical incidents.
+            </p>
+
+            <p>
+              <strong>Optimized Solution:</strong> The adaptive square root
+              decomposition pre-aggregates metrics into intelligent blocks
+              (5-minute intervals for recent data, 15-minute for historical).
+              Each query combines 6-12 block aggregates instead of scanning
+              300,000+ individual data points, reducing response time to
+              200-500ms.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>Preprocessing Time: O(n)</li>
+              <li>Range Query Time: O(√n)</li>
+              <li>Update Time: O(√n) worst case</li>
+              <li>Space Complexity: O(n)</li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Real-time billing visibility</li>
+              <li>Instant anomaly detection</li>
+              <li>Scalable and efficient resource monitoring</li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/sqrt_decomposition.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.3 AWS VPC Network Traffic Routing Optimization
+          </div>
+          <div class="use-case-content">
+            <p>
+              Enterprise AWS VPC environments with multi-tier applications
+              distributed across multiple Availability Zones require
+              sophisticated network analysis to optimize performance and costs.
+              Web servers in public subnets must efficiently communicate with
+              application servers in private subnets and database clusters in
+              isolated subnets, while managing hybrid connectivity through VPN
+              gateways, Direct Connect, and Transit Gateway connections.
+            </p>
+
+            <!-- <img
+              src="system-design/square.jpg"
+              width="100%"
+              height="600px"
+              style="border: none"
+            /> -->
+            <h5>Challenges:</h5>
+            <ul>
+              <li>
+                Optimizing network paths between AZ-1 web servers and AZ-2
+                databases.
+              </li>
+              <li>Reducing latency and cross-AZ data transfer costs.</li>
+              <li>Preventing routing loops to avoid network failures.</li>
+            </ul>
+
+            <h5>Algorithm: Bellman-Ford</h5>
+            <p>
+              Bellman-Ford is a shortest path algorithm that handles negative
+              edge weights, making it ideal for AWS VPC routing. It detects
+              routing loops, finds optimal paths from a single source to all
+              destinations, and works reliably even in complex network
+              topologies.
+            </p>
+
+            <figure style="text-align: center">
+              <img
+                src="gif/bellmanford.gif"
+                alt="Bellman-Ford Algorithm Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 32: Visulization of Bellman-Ford Algorithm[24]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p><strong>Network Setup:</strong></p>
+            <ul>
+              <li>
+                VPC Subnets: Public (Web Tier), Private (App Tier), Database
+              </li>
+              <li>
+                Key Components: Load balancers, app servers, RDS clusters,
+                ElastiCache
+              </li>
+              <li>
+                External Connections: VPN, Direct Connect, Transit Gateway, VPC
+                Peering
+              </li>
+            </ul>
+
+            <p><strong>Black Friday Scenario:</strong></p>
+            <ul>
+              <li>Traffic jumps from 1,000 to 50,000 requests/sec</li>
+              <li>Database queries increase 20x</li>
+              <li>Cross-AZ bandwidth tightens</li>
+            </ul>
+
+            <p><strong>Algorithm Steps:</strong></p>
+            <ul>
+              <li>Assess network: Assign weights based on latency and cost</li>
+              <li>
+                Run Bellman-Ford: Find optimal routes, update routing tables, no
+                loops detected
+              </li>
+              <li>
+                Dynamic rerouting: Monitor load, shift traffic to reduce AZ1
+                overload and balance DB queries
+              </li>
+            </ul>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                <strong>Best Case:</strong> O(E) - Linear time when no negative
+                cycles exist
+              </li>
+              <li>
+                <strong>Average Case:</strong> O(V × E) - Standard performance
+                for typical networks
+              </li>
+              <li>
+                <strong>Worst Case:</strong> O(V × E) - Maximum iterations
+                needed for complex topologies
+              </li>
+              <li>
+                <strong>Space Complexity:</strong> O(V) - Memory efficient
+                storage for distance arrays
+              </li>
+              <li>
+                <strong>Practical Performance:</strong> ~100ms for typical VPC
+                networks (&lt;1000 nodes)
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Reduced network operating expenses</li>
+              <li>Improved application performance</li>
+              <li>High network availability with intelligent failover</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/bellman-ford.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.4 Traffic Distribution for High Availability in AWS Load Balancing
+          </div>
+          <div class="use-case-content">
+            <p>
+              In AWS cloud environments, efficiently distributing traffic across
+              heterogeneous server instances is critical for maintaining high
+              availability, optimal performance, and cost-effectiveness. As
+              traffic patterns fluctuate and server capacities vary
+              significantly, intelligent load balancing algorithms help prevent
+              bottlenecks, ensure optimal resource utilization, and maintain
+              consistent user experience across diverse workloads.
+            </p>
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Uneven load causing server overloads</li>
+              <li>Handling varied server capacities efficiently</li>
+              <li>Ensuring high availability during traffic spikes</li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="images/loadbalancing_w.png"
+                alt="Load Balancing Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 33:Architecture diagram illustrating AWS load balancing
+                for traffic distribution
+              </figcaption>
+            </figure>
+
+            <h5>Algorithm: Weighted Round Robin (WRR)</h5>
+            <p>
+              Weighted Round Robin is an advanced load balancing algorithm that
+              distributes incoming requests across multiple servers based on
+              dynamically calculated weights. Each server receives traffic
+              proportional to its weight, which reflects its processing
+              capacity, current load, and health status. This ensures that
+              high-performance servers handle proportionally more requests while
+              preventing smaller instances from being overwhelmed.
+            </p>
+
+            <figure style="text-align: center">
+              <img
+                src="gif/wrr.gif"
+                alt="Weighted Round Robin Load Balancing Animation"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 34: Animation demonstrating the Weighted Round Robin
+                (WRR) algorithm[9]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>A web app runs on 3 EC2 instances with weights:</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Server</th>
+                  <th>Instance Type</th>
+                  <th>Weight</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Server A</td>
+                  <td>m5.large</td>
+                  <td>5</td>
+                </tr>
+                <tr>
+                  <td>Server B</td>
+                  <td>t3.medium</td>
+                  <td>3</td>
+                </tr>
+                <tr>
+                  <td>Server C</td>
+                  <td>t3.small</td>
+                  <td>2</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>
+              The AWS Load Balancer distributes traffic so Server A gets 50%,
+              Server B 30%, and Server C 20% of requests, matching each
+              instance’s capacity and improving performance.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                Time Complexity:O(1) per request — selects the next server in
+                constant time.
+              </li>
+              <li>
+                Space Complexity: O(n) — stores weights and counters for n
+                servers.
+              </li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Improved uptime and reliability</li>
+              <li>Cost-effective resource usage</li>
+              <li>Enhanced user experience with low latency</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/wrr.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View WRR Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.5 Content Delivery Network Optimization in AWS CloudFront
+          </div>
+          <div class="use-case-content">
+            <p>
+              AWS CloudFront operates a global network of over 400 edge
+              locations to deliver content with minimal latency. The service
+              employs intelligent routing algorithms to select optimal edge
+              locations based on multiple factors including geographic
+              proximity, network latency, server load, and available bandwidth.
+              This multi-factor optimization ensures efficient content delivery
+              while maintaining cost-effectiveness and high availability.
+            </p>
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Balancing latency, load, bandwidth, and cost dynamically.</li>
+              <li>
+                Handling real-time traffic for millions of users globally.
+              </li>
+              <li>Ensuring fast failover to maintain service availability.</li>
+            </ul>
+
+            <h5>Algorithm: Dijkstra's Shortest Path Algorithm</h5>
+            <p>
+              Dijkstra’s algorithm finds the shortest path from the user’s
+              location to all AWS CloudFront edge locations in a network graph.
+              Each connection has a weight representing latency, load, and
+              congestion. Starting from the user, the algorithm repeatedly picks
+              the closest unvisited node, updates distances to neighbors if
+              shorter paths are found, and continues until the best edge
+              location is identified. This ensures content is delivered via the
+              fastest and least congested route.
+            </p>
+
+            <figure style="text-align: center">
+              <img
+                src="gif/dijkstar.gif"
+                alt="Dijkstra's Algorithm Visualization"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 35: Dijkstra's Shortest Path Algorithm Visualization[24]
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              A user in Mumbai requests a video. CloudFront considers multiple
+              edges with different latency and load. Using Dijkstra’s algorithm,
+              it calculates a combined cost (latency + load) for each edge and
+              selects the one with the lowest total. Even if Mumbai edge has
+              lowest latency, heavy load may cause the algorithm to choose
+              Chennai or Singapore edges instead, ensuring faster delivery
+              overall. The selection updates dynamically as conditions change.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li><strong>Time Complexity:</strong> O((V + E) log V)</li>
+              <li><strong>Space Complexity:</strong> O(V + E)</li>
+            </ul>
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>
+                Faster content delivery enhances user experience and engagement.
+              </li>
+              <li>
+                Cost savings through optimized bandwidth and load distribution.
+              </li>
+              <li>
+                Scalable and reliable global content delivery for business
+                growth.
+              </li>
+            </ul>
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/dijkstr.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Dijkstra's on GitHub
+            </a>
+          </div>
+        </div>
+        <div class="use-case">
+          <div class="use-case-header" onclick="toggleUseCase(this)">
+            <span class="arrow">▸</span>
+            4.6 Priority-Based Email Scheduling with AWS Simple Email Service
+          </div>
+          <div class="use-case-content">
+            <p>
+              This system addresses the critical challenge of managing email
+              communications with varying urgency levels within AWS Simple Email
+              Service (SES) environments. By implementing a heap-based priority
+              queue architecture, the solution ensures that time-sensitive
+              communications such as security alerts, password resets, and
+              transaction confirmations receive immediate processing priority,
+              even when competing with high-volume marketing campaigns for
+              system resources.
+            </p>
+
+            <h5>Challenges:</h5>
+            <ul>
+              <li>Priority inversion delays critical emails</li>
+              <li>High volume slows processing</li>
+              <li>SES limits block urgent messages</li>
+            </ul>
+
+            <h5>Algorithm: Heap-Based Priority Queue</h5>
+            <p>
+              Uses a max-heap priority queue to process emails by urgency. Each
+              email gets a priority based on type, urgency, and recipients.
+              Higher priority emails are sent first to ensure critical messages
+              are delivered immediately.
+            </p>
+            <ul>
+              <li>Assign priority based on email details.</li>
+              <li>Insert email into heap, maintaining order.</li>
+              <li>Remove highest priority email for sending.</li>
+              <li>Dynamically adjust priorities if needed.</li>
+            </ul>
+            <h5>Design Principles:</h5>
+            <p>
+              Processes emails by priority using an efficient, scalable, fair,
+              and simple max-heap design.
+            </p>
+            <h5>Priority Classification Framework</h5>
+            <ul>
+              <li>
+                <strong>Critical (Priority 1):</strong> Security alerts,
+                password resets, account lockouts, payment failures
+              </li>
+              <li>
+                <strong>High (Priority 2):</strong> Order confirmations,
+                shipping notifications, invoice alerts
+              </li>
+              <li>
+                <strong>Medium (Priority 3):</strong> Account updates,
+                preference changes, general notifications
+              </li>
+              <li>
+                <strong>Low (Priority 4):</strong> Marketing campaigns,
+                newsletters, promotional content
+              </li>
+            </ul>
+            <figure style="text-align: center">
+              <img
+                src="gif/prorityq.gif"
+                alt="Priority Queue Animation"
+                style="
+                  width: 60%;
+                  height: auto;
+                  display: block;
+                  margin: 0 auto;
+                  border: none;
+                "
+              />
+              <figcaption
+                style="margin-top: 8px; font-style: italic; color: #555"
+              >
+                Figure 36:Heap-Based Priority Queue Visualization
+              </figcaption>
+            </figure>
+
+            <h5>Real-Time Usage Example:</h5>
+            <p>
+              An e-commerce platform sends various emails daily: marketing
+              campaigns to thousands, order confirmations, and critical alerts
+              like password resets or payment failures. Using the max-heap
+              priority queue algorithm, the system assigns high priority to
+              urgent emails (e.g., password resets), even if they arrive after
+              bulk marketing emails. This ensures customers receive critical
+              notifications instantly while marketing emails are queued and sent
+              afterward, optimizing delivery speed and customer satisfaction.
+            </p>
+
+            <h5>Algorithm Performance Analysis</h5>
+            <ul>
+              <li>
+                <strong>Insertion Complexity:</strong> O(log n) for adding new
+                emails to priority queue
+              </li>
+              <li>
+                <strong>Extraction Complexity:</strong> O(log n) for retrieving
+                highest-priority email
+              </li>
+              <li>
+                <strong>Space Complexity:</strong> O(n) for heap storage
+                requirements
+              </li>
+            </ul>
+
+            <h5>Market Benefits:</h5>
+            <ul>
+              <li>Faster delivery of critical emails</li>
+              <li>Meets SLA and compliance needs</li>
+              <li>Optimized cost and resource use</li>
+            </ul>
+
+            <a
+              href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/priorityQ.c"
+              style="
+                font-size: 18px;
+                color: #0366d6;
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.2s ease-in-out,
+                  border-bottom 0.2s ease-in-out;
+                border-bottom: 1px solid transparent;
+              "
+              onmouseover="this.style.borderBottom='1px solid #0366d6';"
+              onmouseout="this.style.borderBottom='1px solid transparent';"
+              target="_blank"
+            >
+              🔗 View Code on GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="use-cases-container">
+          <h3>5. Amazon Prime Video Use Cases</h3>
+          <figure style="text-align: center">
+            <img
+              src="system-design/primevideo.jpg"
+              width="100%"
+              height="600px"
+              style="border: none"
+              alt="Amazon Prime Video System Design"
+            />
+            <figcaption
+              style="margin-top: 8px; font-style: italic; color: #555"
+            >
+              Figure 37: Amazon Prime Video System Design Architecture
+            </figcaption>
+          </figure>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.1 Metadata Storage and Retrieval for Video Segments
+            </div>
+            <div class="use-case-content">
+              <p>
+                Managing millions of video segments for streaming requires
+                efficient storage and retrieval of metadata such as segment ID,
+                format, location, and processing status. Fast access to this
+                metadata is essential for responsive streaming, real-time
+                monitoring, and rapid failure recovery.
+              </p>
+
+              <!-- <img
+                src="system-design/segment.jpg"
+                alt="A* Algorithm Visualization"
+                width="600"
+                height="400"
+              /> -->
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Efficiently managing large-scale metadata.</li>
+                <li>Low-latency access for streaming.</li>
+                <li>Fast updates for monitoring and recovery.</li>
+              </ul>
+
+              <h5>Algorithm : Hash Map</h5>
+              <p>
+                A hash map is used to store metadata with segment IDs as keys,
+                allowing constant average-time (<code>O(1)</code>) operations
+                for insertion, lookup, and update. This ensures efficient access
+                to metadata in real-time streaming environments.
+              </p>
+              <figure style="text-align: center">
+                <img
+                  src="gif/hash map.gif"
+                  alt="Hash Map Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 38: Hash Map Visualization[25]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                When a user streams a video on Amazon Prime Video, the system
+                quickly locates the correct video segments by fetching their
+                metadata from the hash map using the segment ID as the key. This
+                fast access minimizes playback delay and buffering. If a segment
+                transcoding fails, its status is updated instantly in the hash
+                map, enabling immediate retry or fallback, which enhances
+                streaming reliability and user experience.
+              </p>
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  <strong>Insert/Update:</strong> O(1) - Constant time on
+                  average for adding or updating metadata.
+                </li>
+                <li>
+                  <strong>Lookup:</strong> O(1) - Instant retrieval of metadata
+                  using segment ID as the key.
+                </li>
+                <li>
+                  <strong>Space Complexity:</strong> O(n) - Space grows linearly
+                  with the number of video segments.
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Reduced buffering for smoother playback.</li>
+                <li>Better reliability with quick issue handling.</li>
+                <li>Optimized costs through efficient resource use.</li>
+              </ul>
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/hashmap.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.2 Video Chunking for Scalable Video Streaming
+            </div>
+            <div class="use-case-content">
+              <p>
+                When users upload large videos (e.g., movies or events), the
+                system splits the video into fixed-size segments (e.g., 5
+                seconds each). This makes video processing, storage, and
+                streaming more manageable, allowing faster transcoding, parallel
+                processing, and adaptive streaming to users with varied
+                bandwidth.
+              </p>
+
+              <!-- <img
+                src="system-design/segment.jpg"
+                alt="A* Algorithm Visualization"
+                width="600"
+                height="400"
+              /> -->
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Large video uploads.</li>
+                <li>Need real-time processing.</li>
+                <li>Users with different bandwidths.</li>
+              </ul>
+
+              <h5>Algorithm:Sliding Window / Fixed-Size Chunking</h5>
+              <p>
+                The video is divided into small, fixed-duration chunks by
+                sliding a window of constant size (e.g., 5 seconds) across the
+                video timeline. Each resulting segment is independently
+                processed, stored, and delivered.
+              </p>
+
+              <figure style="text-align: center">
+                <img
+                  src="gif/sliding.png"
+                  alt="Sliding Window Technique Visualization"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                    /* clip-path: inset(0px 0px 200px 0px); */
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 39: Sliding Window Algorithm
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                For a 1-hour movie uploaded by a user, the system extracts
+                5-second segments (e.g., segment 1: 0-5 seconds, segment 2: 5-10
+                seconds, etc.). Each segment is transcoded and cached
+                separately, enabling the CDN to stream the appropriate quality
+                chunk based on the viewer’s bandwidth, thus minimizing
+                buffering.
+              </p>
+
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  <strong>Segment Extraction:</strong> O(n) – A linear scan
+                  through the video to extract each segment (n = number of
+                  segments).
+                </li>
+                <li>
+                  <strong>Parallel Processing:</strong> O(1) per segment – Each
+                  chunk can be processed in parallel, allowing scalability.
+                </li>
+                <li>
+                  <strong>Storage Overhead:</strong> O(n) – Each segment is
+                  stored independently, requiring linear space relative to the
+                  number of segments.
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Faster playback, less buffering.</li>
+                <li>Lower CDN costs and better scalability.</li>
+                <li>Better user retention and experience!</li>
+              </ul>
+
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/sliding.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.3 Video Segment Scheduling for Transcoding
+            </div>
+            <div class="use-case-content">
+              <p>
+                Once a video is divided into smaller segments, each must be
+                transcoded efficiently and in sequence. Scheduling these
+                segments properly prevents server overload, avoids processing
+                delays, and ensures that the final video is delivered with
+                consistent quality across platforms.
+              </p>
+              <!-- 
+              <img
+                src="system-design/segment.jpg"
+                alt="A* Algorithm Visualization"
+                width="600"
+                height="400"
+              /> -->
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Handling many video segments quickly.</li>
+                <li>Maintaining correct processing order.</li>
+                <li>Managing server overloads and failures.</li>
+              </ul>
+
+              <h5>FIFO Queue</h5>
+              <p>
+                A First-In-First-Out (FIFO) queue is used to schedule video
+                segment processing. Segments are added to the queue in the order
+                they are created and transcoded sequentially. This ensures order
+                integrity and simplifies recovery in case of failure by
+                re-inserting segments back into the queue.
+              </p>
+
+              <figure style="text-align: center">
+                <img
+                  src="gif/fifo.gif"
+                  alt="FIFO Queue Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 40: FIFO Queue Visualization[26]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                When a user uploads a video, the splitter generates multiple
+                segments that enter the processing queue. Each segment waits its
+                turn and is transcoded in order. If transcoding for a segment
+                fails due to server issues, that segment can be reinserted into
+                the queue for retry. This orderly processing ensures the final
+                video is ready for streaming without missing or out-of-order
+                parts.
+              </p>
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  <strong>Enqueue (Add):</strong> O(1) – Adds a segment to the
+                  end of the queue instantly.
+                </li>
+                <li>
+                  <strong>Dequeue (Process):</strong> O(1) – Fetches the next
+                  segment in constant time.
+                </li>
+                <li>
+                  <strong>Space Complexity:</strong> O(n) – Space grows linearly
+                  with the number of queued segments.
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Smoother video playback.</li>
+                <li>Lower transcoding costs.</li>
+                <li>Faster video delivery and happier users.</li>
+              </ul>
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/fifo.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.4 Max-Flow Optimization for Prime Video Delivery
+            </div>
+            <div class="use-case-content">
+              <p>
+                Applying network flow optimization techniques to enhance the
+                delivery of video content across Prime Video's infrastructure.
+                The objective is to ensure efficient content distribution by
+                minimizing latency, reducing bottlenecks, and optimizing the
+                overall network performance, particularly under heavy load
+                conditions.
+              </p>
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Adapting to traffic changes</li>
+                <li>Balancing server load</li>
+                <li>Avoiding congestion</li>
+                <li>Maximizing streaming quality</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="system-design/ford.jpg"
+                  alt="Ford Algorithm Visualization"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 41:Workflow of Max-Flow Optimization Algorithm for
+                  Efficient Prime Video Content Delivery
+                </figcaption>
+              </figure>
+
+              <h5>Algorithm Description: Ford-Fulkerson (Max-Flow)</h5>
+              <p>
+                Ford-Fulkerson finds the maximum flow in a network by repeatedly
+                identifying augmenting paths from source to sink and pushing
+                flow through them. It uses a residual graph to track remaining
+                capacities and updates flows until no more paths can be found.
+              </p>
+
+              <h5>Design Principles:</h5>
+              <ul>
+                <li>Residual graph tracks available capacity.</li>
+                <li>Augmenting paths found via DFS or BFS.</li>
+                <li>Flow updated along valid paths.</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="gif/ford.gif"
+                  alt="Ford-Fulkerson Algorithm Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 42: Visualization of Ford-Fulkerson Algorithm[27]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage:</h5>
+
+              <p>
+                During a major Prime Video event, Ford-Fulkerson quickly routes
+                video streams from data centers to edge servers by finding
+                max-flow paths. When some routes get congested, it reroutes
+                traffic through alternate paths, minimizing buffering and
+                ensuring smooth streaming for millions of users.
+              </p>
+
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  Time complexity: O(E × f), where E is the number of edges and
+                  f is the maximum flow
+                </li>
+                <li>
+                  Space complexity: O(V + E) for storing the residual graph,
+                  where V is vertices and E is edges
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Less buffering and latency</li>
+                <li>Efficient resource use</li>
+                <li>Scalable for peak traffic</li>
+                <li>Reliable delivery during failures</li>
+              </ul>
+
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/ford_fulkerson.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Ford-Fulkerson Code Here</a
+              >
+              <br />
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.5 Optimized Content Delivery and Edge Caching in Amazon Prime
+              Video
+            </div>
+            <div class="use-case-content">
+              <p>
+                Amazon Prime Video serves millions of users globally with
+                high-quality streaming content. To provide seamless and
+                low-latency video playback, Prime Video uses a global Content
+                Delivery Network (CDN) that caches video segments on
+                geographically distributed edge servers.
+              </p>
+              <p>
+                Since each edge server has limited storage capacity, it cannot
+                cache every video segment. Efficient cache management is
+                critical to ensure popular and frequently requested video
+                segments remain close to users, reducing buffering and improving
+                playback quality.
+              </p>
+              <!-- <img
+                src="system-design/segment.jpg"
+                alt="A* Algorithm Visualization"
+                width="600"
+                height="400"
+              /> -->
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Limited storage capacity on edge servers</li>
+                <li>High volume of diverse content requests</li>
+                <li>Need for real-time low-latency streaming</li>
+              </ul>
+
+              <h5>Algorithm: LRU Cache</h5>
+              <ul>
+                <li>
+                  Maintains cache entries in a doubly linked list reflecting
+                  usage order.
+                </li>
+                <li>Uses a hash map for quick lookup of video segments.</li>
+                <li>
+                  On cache hits, moves accessed segment to the front (most
+                  recently used).
+                </li>
+                <li>
+                  On cache misses, adds the new segment and evicts the tail
+                  (least recently used) if the cache is full.
+                </li>
+              </ul>
+
+              <figure style="text-align: center">
+                <img
+                  src="gif/lru1.gif"
+                  alt="LRU Cache Animation 1"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+              </figure>
+
+              <figure style="text-align: center">
+                <img
+                  src="gif/lru2.gif"
+                  alt="LRU Cache Animation 2"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+              </figure>
+
+              <figure style="text-align: center">
+                <img
+                  src="gif/lru3.gif"
+                  alt="LRU Cache Animation 3"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 44: LRU Cache Algorithm Visualization[10]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                When a user in India streams a new episode of “The Boys,” the
+                local CDN edge server caches the streamed segments. As more
+                users request segments, the cache fills. The LRU algorithm
+                evicts older, less accessed segments (e.g., last month’s less
+                popular shows) to make room for currently trending video
+                segments, ensuring smooth streaming with reduced buffering.
+              </p>
+
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  <strong>Get:</strong> O(1) — Constant time lookup using hash
+                  map
+                </li>
+                <li>
+                  <strong>Put:</strong> O(1) — Insert at the head of the doubly
+                  linked list
+                </li>
+                <li>
+                  <strong>Eviction:</strong> O(1) — Remove the tail node (least
+                  recently used)
+                </li>
+                <li>
+                  <strong>Space:</strong> O(n) — Where n is the number of cache
+                  entries
+                </li>
+              </ul>
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Reduced latency for faster video start</li>
+                <li>Optimized bandwidth by serving cached content locally</li>
+                <li>Improved user experience and retention</li>
+              </ul>
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/lru.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.6 Prime Video — Fast Title/Description Search using KMP
+            </div>
+            <div class="use-case-content">
+              <p>
+                When a user searches for a show or movie (e.g., types "time
+                traveler"), Prime Video must quickly scan through millions of
+                titles, descriptions, and subtitles to find matches.
+              </p>
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Fast, low-latency search over millions of titles</li>
+                <li>Efficient memory use for large-scale exact matching</li>
+                <li>Supports multilingual exact search</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="system-design/kmp.jpg"
+                  alt="KMP Algorithm Visualization"
+                  style="
+                    width: 50%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 45:Workflow of Prime Video’s Efficient Title and
+                  Description Search Using the KMP Algorithm
+                </figcaption>
+              </figure>
+
+              <h5>Algorithm: Knuth-Morris-Pratt (KMP)</h5>
+              <p>
+                KMP searches for a pattern by preprocessing it into an LPS
+                table, enabling fast, linear-time matching without backtracking.
+              </p>
+
+              <h5>Design Principles:</h5>
+              <ul>
+                <li>
+                  Preprocess pattern with LPS table for efficient matching.
+                </li>
+                <li>Skip redundant comparisons to speed up search.</li>
+                <li>Linear time complexity O(N + M) for scalability.</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="gif/kmp-algorithm-approach.gif"
+                  alt="KMP Algorithm Approach Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 46: Knuth-Morris-Pratt Algorithm visualization[28]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                When a user searches for “time traveler” on Prime Video, KMP
+                scans titles, descriptions, and subtitles in linear time,
+                avoiding repeated comparisons.
+              </p>
+              <p>
+                For example, it quickly matches titles like
+                <em>“The Time Traveler’s Wife”</em> without rescanning text,
+                enabling instant, accurate, and multilingual search suggestions.
+              </p>
+
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  Time complexity: O(N + M), where N is the text length and M is
+                  the pattern length
+                </li>
+                <li>
+                  Space complexity: O(M) for the LPS (Longest Prefix Suffix)
+                  table
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>Quick search improves user experience</li>
+                <li>Boosts content discovery and engagement</li>
+                <li>Scalable and cost-effective solution</li>
+              </ul>
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/kmp.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub</a
+              >
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.7 Tracking Viewing Progress in Prime Video
+            </div>
+            <div class="use-case-content">
+              <p>
+                Prime Video tracks each user’s viewing progress in real time to
+                enable features like “Continue Watching” and personalized
+                recommendations. It keeps a history of interactions to:
+              </p>
+              <ul>
+                <li>Resume content accurately across devices</li>
+                <li>Analyze viewing patterns and binge behavior</li>
+                <li>Optionally revert to previous watch states</li>
+              </ul>
+              <p>
+                This ensures a seamless and personalized streaming experience.
+              </p>
+
+              <h5>Challenges:</h5>
+              <ul>
+                <li>
+                  Efficiently track viewing progress with minimal data
+                  duplication
+                </li>
+                <li>
+                  Fast retrieval of current and past viewing states (versioning)
+                </li>
+                <li>
+                  Support cross-device sync and rollback to previous states
+                </li>
+                <li>Minimize storage by sharing unchanged data</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="system-design/p_seg_tree.jpg"
+                  alt="Persistent Segment Tree Visualization"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 47:Workflow of Viewing Progress Tracking in Prime Video
+                </figcaption>
+              </figure>
+
+              <!-- <h5>Goal:</h5>
+            <p>
+              Reduce delivery times, improve efficiency, and minimize the carbon
+              footprint.
+            </p> -->
+
+              <h5>Algorithm: Persistent Segment Tree</h5>
+
+              <p>
+                A Persistent Segment Tree keeps all past versions after updates
+                by creating new versions instead of overwriting data. This
+                enables efficient queries on any previous state, useful for
+                tracking changes or undoing updates.
+              </p>
+              <h5>Design Principles:</h5>
+              <ul>
+                <li>
+                  Partial copying saves memory by duplicating only changed
+                  nodes.
+                </li>
+                <li>
+                  Immutable versions keep historical states safe for queries.
+                </li>
+                <li>Updates and queries run efficiently in O(log n) time.</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="gif/persistant segment tree.png"
+                  alt="Persistent Segment Tree Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 48:Persistent Segment Tree Algorithm[29]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                When a user watches an episode on Prime Video, a new version of
+                their progress is saved using a persistent segment tree. Only
+                the changed part (e.g., progress from 10 to 15 mins) is stored,
+                keeping previous states intact.
+              </p>
+              <p>
+                For example, if the user pauses at 15 minutes on one device and
+                resumes later on another, the system instantly retrieves the
+                latest version. If needed, it can also roll back to a previous
+                timestamp.
+              </p>
+
+              <!-- Analysis Section -->
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>Update and Query time: O(log n) each</li>
+                <li>
+                  Space complexity: O(n log n) for persistent segment tree
+                  versions
+                </li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>
+                  Seamless user experience with accurate progress tracking
+                </li>
+                <li>Improved retention via personalized recommendations</li>
+                <li>Reliable and scalable data management across devices</li>
+              </ul>
+
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/psegment_tree.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+
+          <div class="use-case">
+            <div class="use-case-header" onclick="toggleUseCase(this)">
+              <span class="arrow">▸</span>
+              5.8 Amazon Prime Video: Range Query Optimization
+            </div>
+            <div class="use-case-content">
+              <p>
+                Amazon Prime Video processes massive amounts of data daily,
+                including views, ratings, and user interactions. Frequent
+                range-based queries, such as filtering by date, genre, or
+                language, make real-time analytics and insights challenging with
+                traditional data processing methods.
+              </p>
+              <h5>Challenges:</h5>
+              <ul>
+                <li>Handling frequent range-based queries on large datasets</li>
+                <li>Real-time updates with new views and ratings</li>
+                <li>
+                  Multidimensional filtering (e.g., time, genre, language)
+                </li>
+                <li>Maintaining fast query response times for dashboards</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="system-design/segment.jpg"
+                  alt="Segment Tree Visualization"
+                  style="
+                    width: 50%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 49: Workflow of Range Query Optimization in Amazon
+                  Prime Video
+                </figcaption>
+              </figure>
+
+              <h5>Algorithm: Segment Tree</h5>
+              <p>
+                Segment Tree is a tree that efficiently answers range queries on
+                an array by storing pre-calculated results for different
+                segments.
+              </p>
+              <h5>Design Principle</h5>
+              <ul>
+                <li>Divide and conquer by splitting into smaller segments.</li>
+                <li>Nodes store combined data for fast queries.</li>
+                <li>Updates affect only relevant nodes for efficiency.</li>
+              </ul>
+              <figure style="text-align: center">
+                <img
+                  src="gif/segment.gif"
+                  alt="Segment Tree Animation"
+                  style="
+                    width: 60%;
+                    height: auto;
+                    display: block;
+                    margin: 0 auto;
+                    border: none;
+                  "
+                />
+                <figcaption
+                  style="margin-top: 8px; font-style: italic; color: #555"
+                >
+                  Figure 50: Segment Tree Visualization[30]
+                </figcaption>
+              </figure>
+
+              <h5>Real-Time Usage</h5>
+              <p>
+                Amazon uses segment trees to power dashboards showing real-time
+                stats. For example, to compute:
+                <strong
+                  >"Total views for Hindi Thriller movies in the last 30
+                  days"</strong
+                >, a segment tree is used to quickly sum views within the
+                required date range and genre.
+              </p>
+              <p>
+                When a user watches a new movie or gives a rating, the tree
+                updates only affected segments, ensuring instant and efficient
+                analytics across large datasets.
+              </p>
+
+              <h5>Algorithm Performance Analysis</h5>
+              <ul>
+                <li>
+                  Query: O(log N) for fast range queries (e.g., views in last 7
+                  days)
+                </li>
+                <li>
+                  Update: O(log N) to reflect new ratings or views in real time
+                </li>
+                <li>Build: O(N) time to construct the tree initially</li>
+                <li>Space: O(4N) to store segment and child nodes</li>
+              </ul>
+
+              <h5>Market Benefits:</h5>
+              <ul>
+                <li>
+                  Faster, real-time analytics for improved decision-making
+                </li>
+                <li>Reduced backend load and operational costs</li>
+                <li>Better user experience through timely recommendations</li>
+              </ul>
+              <a
+                href="https://github.com/AnjaliSavalkar/Aps.github.io/tree/main/codes/segment_tree.c"
+                style="
+                  font-size: 18px;
+                  color: #0366d6;
+                  text-decoration: none;
+                  font-weight: 500;
+                  transition: color 0.2s ease-in-out,
+                    border-bottom 0.2s ease-in-out;
+                  border-bottom: 1px solid transparent;
+                "
+                onmouseover="this.style.borderBottom='1px solid #0366d6';"
+                onmouseout="this.style.borderBottom='1px solid transparent';"
+                target="_blank"
+              >
+                🔗 View Code on GitHub
+              </a>
+            </div>
+          </div>
+        </div>
+        <h2>
+          <a href="summary.html" class="btn">🔗 View Summary Table</a>
+        </h2>
+      </section>
+
+      <section id="learnings-section" class="objectives-section">
+        <h2>Learnings</h2>
+        <div class="objectives-container">
+          <div class="objective-item">
+            <p>
+              <strong>
+                Working on this portfolio around Amazon’s different business use
+                cases really opened my eyes to how big systems are built,
+                scaled, and improved using data structures and algorithms.
+                Whether it was video streaming, delivery logistics, or
+                recommendation systems, I saw how choosing the right
+                algorithms—like tries for searching, segment trees for real-time
+                updates, or graphs for routing— can make a huge difference in
+                how smoothly everything runs.</strong
+              >
+            </p>
+            <p>
+              <strong
+                >This project helped me look beyond just writing code. I began
+                to understand how these algorithms actually drive innovation at
+                a global scale. It also taught me the value of thinking like a
+                system designer, modeling solutions based on the problem’s
+                domain, and always being ready to learn and adapt. Most
+                importantly, I learned how the things we study in DSA and APS
+                are used in the real world to solve big, complex
+                problems.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section id="references-section" class="objectives-section">
+        <h2>References</h2>
+        <ol class="objectives-container">
+          <li>
+            <a
+              href="https://medium.com/nerd-for-tech/designing-a-video-on-demand-system-like-netflix-amazon-prime-etc-df4a61a9424f"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Designing a VOD System – Wickramanayake
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@ayush_mittal/system-design-for-logistics-management-system-80b876e29bbb"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Logistics System Design – Mittal
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.tryexponent.com/questions/4802/design-amazon-prime-video"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Design Amazon Prime Video – Exponent
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://aws.amazon.com/blogs/architecture/lets-architect-designing-well-architected-systems/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Well-Architected Systems – AWS Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.hackerearth.com/practice/notes/disjoint-set-union-union-find/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Union Find – HackerEarth
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@kethan.pothula/amazon-system-design-and-architecture-d787a6572f35"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Amazon Architecture – Pothula
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://tekton.cloud/architecture-diagram-aws/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AWS Architecture Diagram – Tekton
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://k21academy.com/amazon-web-services/architecture/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              AWS Architecture – K21Academy
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://blog.algomaster.io/p/load-balancing-algorithms-explained-with-code"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Load Balancing Algorithms – Algomaster
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@getrohith.sathya/lru-cache-implementation-using-java-22dd5c218502"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LRU Cache in Java – Sathya
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://gabrielcastro1028.medium.com/trie-data-structure-4a8becc97809"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Trie Data Structure – Gabriel Castro
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@for.wlb.biz/introduction-to-binary-tree-b-tree-b-tree-1ffd62279963"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Introduction to Binary Tree, B-Tree – for.wlb.biz
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://skerritt.blog/timsort/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Timsort Explained – Skerritt Blog
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://stollee.org/2011/09/k-d-tree-nearest-neighbor-search.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              KD-Tree Nearest Neighbor Search – Stollee
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/PageRank"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              PageRank – Wikipedia
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/Disjoint-set_data_structure"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Disjoint-set Data Structure – Wikipedia
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.hackerearth.com/practice/notes/mos-algorithm/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              MO's Algorithm – HackerEarth
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://astikanand.github.io/techblogs/dynamic-programming-patterns/0-1-knapsack-pattern"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              0-1 Knapsack Pattern – Astikanand's Tech Blogs
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://medium.com/@askurkure123/krushkals-algorithm-477d89e1e9e2"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Kruskal's Algorithm – Askurkure
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://inteligenciafutura.mx/english-version-blog/games-routes-and-circuits-problem-solving-with-artificial-intelligence"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Games, Routes and Circuits: Problem Solving with AI – Inteligencia
+              Futura
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://python.plainenglish.io/exploring-the-foundations-and-applications-of-the-stable-match-problem-from-theory-to-practice-3f43d778a8bf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Exploring the Foundations and Applications of the Stable Match
+              Problem – Plain English Python
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/A*_search_algorithm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              A* Search Algorithm – Wikipedia
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.hackerearth.com/blog/competitive-programming-anudeep-nekkanti"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Square Root Decomposition Algorithm with Anudeep Nekkanti –
+              HackerEarth
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Dijkstra's Algorithm – Wikipedia
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://brilliant.org/wiki/hash-tables/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Hash Tables – Brilliant
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.scaler.com/topics/java/stack-and-queue-in-java/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Stack and Queue in Java – Scaler
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://commons.wikimedia.org/wiki/File:FordFulkersonDemo.gif"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ford-Fulkerson Algorithm Demo – Wikimedia Commons
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.scaler.com/topics/data-structures/kmp-algorithm/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              KMP Algorithm – Scaler
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.geeksforgeeks.org/persistent-segment-tree-set-1-introduction/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Persistent Segment Tree – GeeksforGeeks
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.scaler.com/topics/data-structures/segment-trees-in-data-structure/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Segment Trees in Data Structure – Scaler
+            </a>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Anjali Savalkar. All rights reserved.</p>
+    </footer>
+    <script>
+      function toggleUseCase(header) {
+        const content = header.nextElementSibling;
+        const arrow = header.querySelector(".arrow");
+        const isVisible = content.style.display === "block";
+        content.style.display = isVisible ? "none" : "block";
+        arrow.textContent = isVisible ? "▸" : "▾";
+      }
+    </script>
+  </body>
+</html>
